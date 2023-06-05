@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>4319146069-8st86r4pomnm5dcrpmv5fno76hgclvf0.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.4319146069-8st86r4pomnm5dcrpmv5fno76hgclvf0</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAIjuvxu_OHICe2l-2dBuuFPqMgesDe_u8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>4319146069</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.test.Parking</string>
+	<key>PROJECT_ID</key>
+	<string>parking-3ad4b</string>
+	<key>STORAGE_BUCKET</key>
+	<string>parking-3ad4b.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:4319146069:ios:0bf004f1a8d5742be024dc</string>
+</dict>
+</plist>
