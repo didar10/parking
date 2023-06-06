@@ -12,9 +12,15 @@
 		449E99612A2F656E00762D98 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449E99602A2F656E00762D98 /* HomeVC.swift */; };
 		449E99632A2F657B00762D98 /* ParkingHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449E99622A2F657B00762D98 /* ParkingHistoryVC.swift */; };
 		449E99652A2F658C00762D98 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449E99642A2F658C00762D98 /* ProfileVC.swift */; };
+		DD63965A2A2F6818006546E1 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6396592A2F6818006546E1 /* CustomTextField.swift */; };
+		DD63965C2A2F685B006546E1 /* BaseInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD63965B2A2F685A006546E1 /* BaseInputView.swift */; };
+		DD63965E2A2F6865006546E1 /* BaseUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD63965D2A2F6865006546E1 /* BaseUIView.swift */; };
+		DD6396602A2F692A006546E1 /* ViewControllerAppearanceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD63965F2A2F692A006546E1 /* ViewControllerAppearanceProtocol.swift */; };
+		DD6396622A2F69A6006546E1 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6396612A2F69A6006546E1 /* CustomButton.swift */; };
+		DD6396642A2F6F42006546E1 /* CustomSecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6396632A2F6F42006546E1 /* CustomSecondaryButton.swift */; };
 		DDE3E68A2A2DFD6B008F4FF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE3E6892A2DFD6B008F4FF8 /* AppDelegate.swift */; };
 		DDE3E68C2A2DFD6B008F4FF8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE3E68B2A2DFD6B008F4FF8 /* SceneDelegate.swift */; };
-		DDE3E68E2A2DFD6B008F4FF8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE3E68D2A2DFD6B008F4FF8 /* ViewController.swift */; };
+		DDE3E68E2A2DFD6B008F4FF8 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE3E68D2A2DFD6B008F4FF8 /* LoginVC.swift */; };
 		DDE3E6932A2DFD6D008F4FF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDE3E6922A2DFD6D008F4FF8 /* Assets.xcassets */; };
 		DDE3E69E2A2E012D008F4FF8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDE3E69D2A2E012C008F4FF8 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -28,10 +34,16 @@
 		7CEEDBDDCE8606B22DE7903D /* Pods-Parking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parking.debug.xcconfig"; path = "Target Support Files/Pods-Parking/Pods-Parking.debug.xcconfig"; sourceTree = "<group>"; };
 		BE3129CBD7E81B15AF97EC8B /* Pods-Parking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parking.release.xcconfig"; path = "Target Support Files/Pods-Parking/Pods-Parking.release.xcconfig"; sourceTree = "<group>"; };
 		D08E82232B82554243EF65DA /* Pods_Parking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD6396592A2F6818006546E1 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		DD63965B2A2F685A006546E1 /* BaseInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInputView.swift; sourceTree = "<group>"; };
+		DD63965D2A2F6865006546E1 /* BaseUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIView.swift; sourceTree = "<group>"; };
+		DD63965F2A2F692A006546E1 /* ViewControllerAppearanceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAppearanceProtocol.swift; sourceTree = "<group>"; };
+		DD6396612A2F69A6006546E1 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		DD6396632A2F6F42006546E1 /* CustomSecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecondaryButton.swift; sourceTree = "<group>"; };
 		DDE3E6862A2DFD6B008F4FF8 /* Parking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDE3E6892A2DFD6B008F4FF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDE3E68B2A2DFD6B008F4FF8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DDE3E68D2A2DFD6B008F4FF8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DDE3E68D2A2DFD6B008F4FF8 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		DDE3E6922A2DFD6D008F4FF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDE3E6972A2DFD6D008F4FF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDE3E69D2A2E012C008F4FF8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -131,6 +143,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DD6396582A2F67C7006546E1 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				DDE3E68D2A2DFD6B008F4FF8 /* LoginVC.swift */,
+				DD6396592A2F6818006546E1 /* CustomTextField.swift */,
+				DD63965B2A2F685A006546E1 /* BaseInputView.swift */,
+				DD63965D2A2F6865006546E1 /* BaseUIView.swift */,
+				DD63965F2A2F692A006546E1 /* ViewControllerAppearanceProtocol.swift */,
+				DD6396612A2F69A6006546E1 /* CustomButton.swift */,
+				DD6396632A2F6F42006546E1 /* CustomSecondaryButton.swift */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
 		DDE3E67D2A2DFD6B008F4FF8 = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +185,7 @@
 				449E99662A2F6B6A00762D98 /* Home */,
 				449E99672A2F6B7300762D98 /* History */,
 				449E99682A2F6B8000762D98 /* Profile */,
+				DD6396582A2F67C7006546E1 /* Authorization */,
 				DDE3E6922A2DFD6D008F4FF8 /* Assets.xcassets */,
 				449E995D2A2F63F300762D98 /* LaunchScreen.storyboard */,
 				DDE3E69D2A2E012C008F4FF8 /* GoogleService-Info.plist */,
@@ -304,8 +331,15 @@
 				449E99652A2F658C00762D98 /* ProfileVC.swift in Sources */,
 				449E99632A2F657B00762D98 /* ParkingHistoryVC.swift in Sources */,
 				DDE3E68E2A2DFD6B008F4FF8 /* ViewController.swift in Sources */,
+				DD63965A2A2F6818006546E1 /* CustomTextField.swift in Sources */,
+				DDE3E68E2A2DFD6B008F4FF8 /* LoginVC.swift in Sources */,
 				DDE3E68A2A2DFD6B008F4FF8 /* AppDelegate.swift in Sources */,
+				DD6396642A2F6F42006546E1 /* CustomSecondaryButton.swift in Sources */,
 				DDE3E68C2A2DFD6B008F4FF8 /* SceneDelegate.swift in Sources */,
+				DD6396622A2F69A6006546E1 /* CustomButton.swift in Sources */,
+				DD6396602A2F692A006546E1 /* ViewControllerAppearanceProtocol.swift in Sources */,
+				DD63965C2A2F685B006546E1 /* BaseInputView.swift in Sources */,
+				DD63965E2A2F6865006546E1 /* BaseUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
