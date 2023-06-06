@@ -18,15 +18,15 @@
 		DD6396602A2F692A006546E1 /* ViewControllerAppearanceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD63965F2A2F692A006546E1 /* ViewControllerAppearanceProtocol.swift */; };
 		DD6396622A2F69A6006546E1 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6396612A2F69A6006546E1 /* CustomButton.swift */; };
 		DD6396642A2F6F42006546E1 /* CustomSecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6396632A2F6F42006546E1 /* CustomSecondaryButton.swift */; };
+		DD6396662A2F7285006546E1 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6396652A2F7285006546E1 /* LoginVC.swift */; };
+		DD6396682A2F7312006546E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD6396672A2F7312006546E1 /* LaunchScreen.storyboard */; };
 		DDE3E68A2A2DFD6B008F4FF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE3E6892A2DFD6B008F4FF8 /* AppDelegate.swift */; };
 		DDE3E68C2A2DFD6B008F4FF8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE3E68B2A2DFD6B008F4FF8 /* SceneDelegate.swift */; };
-		DDE3E68E2A2DFD6B008F4FF8 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE3E68D2A2DFD6B008F4FF8 /* LoginVC.swift */; };
 		DDE3E6932A2DFD6D008F4FF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDE3E6922A2DFD6D008F4FF8 /* Assets.xcassets */; };
 		DDE3E69E2A2E012D008F4FF8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDE3E69D2A2E012C008F4FF8 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		449E995C2A2F63F300762D98 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Parking/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		449E995E2A2F655700762D98 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		449E99602A2F656E00762D98 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		449E99622A2F657B00762D98 /* ParkingHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingHistoryVC.swift; sourceTree = "<group>"; };
@@ -40,10 +40,11 @@
 		DD63965F2A2F692A006546E1 /* ViewControllerAppearanceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAppearanceProtocol.swift; sourceTree = "<group>"; };
 		DD6396612A2F69A6006546E1 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		DD6396632A2F6F42006546E1 /* CustomSecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecondaryButton.swift; sourceTree = "<group>"; };
+		DD6396652A2F7285006546E1 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginVC.swift; path = ../../../LoginVC.swift; sourceTree = "<group>"; };
+		DD6396672A2F7312006546E1 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDE3E6862A2DFD6B008F4FF8 /* Parking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDE3E6892A2DFD6B008F4FF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDE3E68B2A2DFD6B008F4FF8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DDE3E68D2A2DFD6B008F4FF8 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		DDE3E6922A2DFD6D008F4FF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDE3E6972A2DFD6D008F4FF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDE3E69D2A2E012C008F4FF8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -68,15 +69,6 @@
 				BE3129CBD7E81B15AF97EC8B /* Pods-Parking.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		449E995D2A2F63F300762D98 /* LaunchScreen.storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				449E995C2A2F63F300762D98 /* LaunchScreen.storyboard */,
-			);
-			name = LaunchScreen.storyboard;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		449E99662A2F6B6A00762D98 /* Home */ = {
@@ -146,7 +138,7 @@
 		DD6396582A2F67C7006546E1 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
-				DDE3E68D2A2DFD6B008F4FF8 /* LoginVC.swift */,
+				DD6396652A2F7285006546E1 /* LoginVC.swift */,
 				DD6396592A2F6818006546E1 /* CustomTextField.swift */,
 				DD63965B2A2F685A006546E1 /* BaseInputView.swift */,
 				DD63965D2A2F6865006546E1 /* BaseUIView.swift */,
@@ -155,6 +147,17 @@
 				DD6396632A2F6F42006546E1 /* CustomSecondaryButton.swift */,
 			);
 			path = Authorization;
+			sourceTree = "<group>";
+		};
+		DD6396692A2F7395006546E1 /* Yerzhan */ = {
+			isa = PBXGroup;
+			children = (
+				449E995E2A2F655700762D98 /* TabBarViewController.swift */,
+				449E99662A2F6B6A00762D98 /* Home */,
+				449E99672A2F6B7300762D98 /* History */,
+				449E99682A2F6B8000762D98 /* Profile */,
+			);
+			path = Yerzhan;
 			sourceTree = "<group>";
 		};
 		DDE3E67D2A2DFD6B008F4FF8 = {
@@ -180,16 +183,12 @@
 			children = (
 				DDE3E6892A2DFD6B008F4FF8 /* AppDelegate.swift */,
 				DDE3E68B2A2DFD6B008F4FF8 /* SceneDelegate.swift */,
-				DDE3E68D2A2DFD6B008F4FF8 /* ViewController.swift */,
-				449E995E2A2F655700762D98 /* TabBarViewController.swift */,
-				449E99662A2F6B6A00762D98 /* Home */,
-				449E99672A2F6B7300762D98 /* History */,
-				449E99682A2F6B8000762D98 /* Profile */,
 				DD6396582A2F67C7006546E1 /* Authorization */,
+				DD6396692A2F7395006546E1 /* Yerzhan */,
 				DDE3E6922A2DFD6D008F4FF8 /* Assets.xcassets */,
-				449E995D2A2F63F300762D98 /* LaunchScreen.storyboard */,
 				DDE3E69D2A2E012C008F4FF8 /* GoogleService-Info.plist */,
 				DDE3E6972A2DFD6D008F4FF8 /* Info.plist */,
+				DD6396672A2F7312006546E1 /* LaunchScreen.storyboard */,
 			);
 			path = Parking;
 			sourceTree = "<group>";
@@ -255,6 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD6396682A2F7312006546E1 /* LaunchScreen.storyboard in Resources */,
 				DDE3E6932A2DFD6D008F4FF8 /* Assets.xcassets in Resources */,
 				DDE3E69E2A2E012D008F4FF8 /* GoogleService-Info.plist in Resources */,
 			);
@@ -330,13 +330,12 @@
 				449E99612A2F656E00762D98 /* HomeVC.swift in Sources */,
 				449E99652A2F658C00762D98 /* ProfileVC.swift in Sources */,
 				449E99632A2F657B00762D98 /* ParkingHistoryVC.swift in Sources */,
-				DDE3E68E2A2DFD6B008F4FF8 /* ViewController.swift in Sources */,
 				DD63965A2A2F6818006546E1 /* CustomTextField.swift in Sources */,
-				DDE3E68E2A2DFD6B008F4FF8 /* LoginVC.swift in Sources */,
 				DDE3E68A2A2DFD6B008F4FF8 /* AppDelegate.swift in Sources */,
 				DD6396642A2F6F42006546E1 /* CustomSecondaryButton.swift in Sources */,
 				DDE3E68C2A2DFD6B008F4FF8 /* SceneDelegate.swift in Sources */,
 				DD6396622A2F69A6006546E1 /* CustomButton.swift in Sources */,
+				DD6396662A2F7285006546E1 /* LoginVC.swift in Sources */,
 				DD6396602A2F692A006546E1 /* ViewControllerAppearanceProtocol.swift in Sources */,
 				DD63965C2A2F685B006546E1 /* BaseInputView.swift in Sources */,
 				DD63965E2A2F6865006546E1 /* BaseUIView.swift in Sources */,

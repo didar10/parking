@@ -8,6 +8,8 @@
 import UIKit
 import IQKeyboardManagerSwift
 import Firebase
+import SnapKit
+import YandexMapsMobile
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         IQKeyboardManager.shared.enable = true
         FirebaseApp.configure()
+        YMKMapKit.setApiKey("c3872c0a-711c-484b-aa06-d321c8a89858")
+        YMKMapKit.setLocale("ru_RU")
+        YMKMapKit.sharedInstance()
         return true
     }
 
