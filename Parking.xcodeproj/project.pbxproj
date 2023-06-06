@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		38710EFF6D0BFAC5C9E27710 /* Pods_Parking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D08E82232B82554243EF65DA /* Pods_Parking.framework */; };
+		449E995F2A2F655700762D98 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449E995E2A2F655700762D98 /* TabBarViewController.swift */; };
+		449E99612A2F656E00762D98 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449E99602A2F656E00762D98 /* HomeVC.swift */; };
+		449E99632A2F657B00762D98 /* ParkingHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449E99622A2F657B00762D98 /* ParkingHistoryVC.swift */; };
+		449E99652A2F658C00762D98 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449E99642A2F658C00762D98 /* ProfileVC.swift */; };
 		DD63965A2A2F6818006546E1 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6396592A2F6818006546E1 /* CustomTextField.swift */; };
 		DD63965C2A2F685B006546E1 /* BaseInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD63965B2A2F685A006546E1 /* BaseInputView.swift */; };
 		DD63965E2A2F6865006546E1 /* BaseUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD63965D2A2F6865006546E1 /* BaseUIView.swift */; };
@@ -18,11 +22,15 @@
 		DDE3E68C2A2DFD6B008F4FF8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE3E68B2A2DFD6B008F4FF8 /* SceneDelegate.swift */; };
 		DDE3E68E2A2DFD6B008F4FF8 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE3E68D2A2DFD6B008F4FF8 /* LoginVC.swift */; };
 		DDE3E6932A2DFD6D008F4FF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDE3E6922A2DFD6D008F4FF8 /* Assets.xcassets */; };
-		DDE3E6962A2DFD6D008F4FF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDE3E6942A2DFD6D008F4FF8 /* LaunchScreen.storyboard */; };
 		DDE3E69E2A2E012D008F4FF8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDE3E69D2A2E012C008F4FF8 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		449E995C2A2F63F300762D98 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Parking/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		449E995E2A2F655700762D98 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		449E99602A2F656E00762D98 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		449E99622A2F657B00762D98 /* ParkingHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingHistoryVC.swift; sourceTree = "<group>"; };
+		449E99642A2F658C00762D98 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		7CEEDBDDCE8606B22DE7903D /* Pods-Parking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parking.debug.xcconfig"; path = "Target Support Files/Pods-Parking/Pods-Parking.debug.xcconfig"; sourceTree = "<group>"; };
 		BE3129CBD7E81B15AF97EC8B /* Pods-Parking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parking.release.xcconfig"; path = "Target Support Files/Pods-Parking/Pods-Parking.release.xcconfig"; sourceTree = "<group>"; };
 		D08E82232B82554243EF65DA /* Pods_Parking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,7 +45,6 @@
 		DDE3E68B2A2DFD6B008F4FF8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DDE3E68D2A2DFD6B008F4FF8 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		DDE3E6922A2DFD6D008F4FF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DDE3E6952A2DFD6D008F4FF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDE3E6972A2DFD6D008F4FF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDE3E69D2A2E012C008F4FF8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,6 +68,71 @@
 				BE3129CBD7E81B15AF97EC8B /* Pods-Parking.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		449E995D2A2F63F300762D98 /* LaunchScreen.storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				449E995C2A2F63F300762D98 /* LaunchScreen.storyboard */,
+			);
+			name = LaunchScreen.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		449E99662A2F6B6A00762D98 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				449E996C2A2F6BB100762D98 /* ViewModel */,
+				449E99692A2F6B9300762D98 /* ViewController */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		449E99672A2F6B7300762D98 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				449E996A2A2F6B9E00762D98 /* ViewController */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		449E99682A2F6B8000762D98 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				449E996B2A2F6BA500762D98 /* ViewController */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		449E99692A2F6B9300762D98 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				449E99602A2F656E00762D98 /* HomeVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		449E996A2A2F6B9E00762D98 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				449E99622A2F657B00762D98 /* ParkingHistoryVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		449E996B2A2F6BA500762D98 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				449E99642A2F658C00762D98 /* ProfileVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		449E996C2A2F6BB100762D98 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		9425981D7759D3F197442202 /* Frameworks */ = {
@@ -108,9 +180,14 @@
 			children = (
 				DDE3E6892A2DFD6B008F4FF8 /* AppDelegate.swift */,
 				DDE3E68B2A2DFD6B008F4FF8 /* SceneDelegate.swift */,
+				DDE3E68D2A2DFD6B008F4FF8 /* ViewController.swift */,
+				449E995E2A2F655700762D98 /* TabBarViewController.swift */,
+				449E99662A2F6B6A00762D98 /* Home */,
+				449E99672A2F6B7300762D98 /* History */,
+				449E99682A2F6B8000762D98 /* Profile */,
 				DD6396582A2F67C7006546E1 /* Authorization */,
 				DDE3E6922A2DFD6D008F4FF8 /* Assets.xcassets */,
-				DDE3E6942A2DFD6D008F4FF8 /* LaunchScreen.storyboard */,
+				449E995D2A2F63F300762D98 /* LaunchScreen.storyboard */,
 				DDE3E69D2A2E012C008F4FF8 /* GoogleService-Info.plist */,
 				DDE3E6972A2DFD6D008F4FF8 /* Info.plist */,
 			);
@@ -178,7 +255,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDE3E6962A2DFD6D008F4FF8 /* LaunchScreen.storyboard in Resources */,
 				DDE3E6932A2DFD6D008F4FF8 /* Assets.xcassets in Resources */,
 				DDE3E69E2A2E012D008F4FF8 /* GoogleService-Info.plist in Resources */,
 			);
@@ -250,6 +326,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				449E995F2A2F655700762D98 /* TabBarViewController.swift in Sources */,
+				449E99612A2F656E00762D98 /* HomeVC.swift in Sources */,
+				449E99652A2F658C00762D98 /* ProfileVC.swift in Sources */,
+				449E99632A2F657B00762D98 /* ParkingHistoryVC.swift in Sources */,
+				DDE3E68E2A2DFD6B008F4FF8 /* ViewController.swift in Sources */,
 				DD63965A2A2F6818006546E1 /* CustomTextField.swift in Sources */,
 				DDE3E68E2A2DFD6B008F4FF8 /* LoginVC.swift in Sources */,
 				DDE3E68A2A2DFD6B008F4FF8 /* AppDelegate.swift in Sources */,
@@ -263,17 +344,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		DDE3E6942A2DFD6D008F4FF8 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DDE3E6952A2DFD6D008F4FF8 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		DDE3E6982A2DFD6D008F4FF8 /* Debug */ = {
@@ -398,7 +468,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6UNL5Z5SBN;
+				DEVELOPMENT_TEAM = TBYPDZK6VS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Parking/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -428,7 +498,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6UNL5Z5SBN;
+				DEVELOPMENT_TEAM = TBYPDZK6VS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Parking/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
