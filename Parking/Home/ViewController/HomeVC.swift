@@ -36,9 +36,9 @@ class HomeVC: UIViewController {
             view.addSubview(mapView)
         }
         
-        mapView!.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
+//        mapView!.snp.makeConstraints { make in
+//            make.edges.equalToSuperview()
+//        }
         
     }
     
