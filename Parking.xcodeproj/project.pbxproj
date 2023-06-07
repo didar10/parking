@@ -12,13 +12,13 @@
 		449E99612A2F656E00762D98 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449E99602A2F656E00762D98 /* HomeVC.swift */; };
 		449E99632A2F657B00762D98 /* ParkingHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449E99622A2F657B00762D98 /* ParkingHistoryVC.swift */; };
 		449E99652A2F658C00762D98 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449E99642A2F658C00762D98 /* ProfileVC.swift */; };
+		5BF0D62F2A3085C900FDD4D1 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF0D62E2A3085C900FDD4D1 /* LoginVC.swift */; };
 		DD63965A2A2F6818006546E1 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6396592A2F6818006546E1 /* CustomTextField.swift */; };
 		DD63965C2A2F685B006546E1 /* BaseInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD63965B2A2F685A006546E1 /* BaseInputView.swift */; };
 		DD63965E2A2F6865006546E1 /* BaseUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD63965D2A2F6865006546E1 /* BaseUIView.swift */; };
 		DD6396602A2F692A006546E1 /* ViewControllerAppearanceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD63965F2A2F692A006546E1 /* ViewControllerAppearanceProtocol.swift */; };
 		DD6396622A2F69A6006546E1 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6396612A2F69A6006546E1 /* CustomButton.swift */; };
 		DD6396642A2F6F42006546E1 /* CustomSecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6396632A2F6F42006546E1 /* CustomSecondaryButton.swift */; };
-		DD6396662A2F7285006546E1 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6396652A2F7285006546E1 /* LoginVC.swift */; };
 		DD6396682A2F7312006546E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD6396672A2F7312006546E1 /* LaunchScreen.storyboard */; };
 		DDE3E68A2A2DFD6B008F4FF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE3E6892A2DFD6B008F4FF8 /* AppDelegate.swift */; };
 		DDE3E68C2A2DFD6B008F4FF8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE3E68B2A2DFD6B008F4FF8 /* SceneDelegate.swift */; };
@@ -31,6 +31,7 @@
 		449E99602A2F656E00762D98 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		449E99622A2F657B00762D98 /* ParkingHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingHistoryVC.swift; sourceTree = "<group>"; };
 		449E99642A2F658C00762D98 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		5BF0D62E2A3085C900FDD4D1 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginVC.swift; path = ../../../../../Downloads/LoginVC.swift; sourceTree = "<group>"; };
 		7CEEDBDDCE8606B22DE7903D /* Pods-Parking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parking.debug.xcconfig"; path = "Target Support Files/Pods-Parking/Pods-Parking.debug.xcconfig"; sourceTree = "<group>"; };
 		BE3129CBD7E81B15AF97EC8B /* Pods-Parking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parking.release.xcconfig"; path = "Target Support Files/Pods-Parking/Pods-Parking.release.xcconfig"; sourceTree = "<group>"; };
 		D08E82232B82554243EF65DA /* Pods_Parking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,7 +41,6 @@
 		DD63965F2A2F692A006546E1 /* ViewControllerAppearanceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAppearanceProtocol.swift; sourceTree = "<group>"; };
 		DD6396612A2F69A6006546E1 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		DD6396632A2F6F42006546E1 /* CustomSecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecondaryButton.swift; sourceTree = "<group>"; };
-		DD6396652A2F7285006546E1 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginVC.swift; path = ../../../LoginVC.swift; sourceTree = "<group>"; };
 		DD6396672A2F7312006546E1 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDE3E6862A2DFD6B008F4FF8 /* Parking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDE3E6892A2DFD6B008F4FF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,7 +138,7 @@
 		DD6396582A2F67C7006546E1 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
-				DD6396652A2F7285006546E1 /* LoginVC.swift */,
+				5BF0D62E2A3085C900FDD4D1 /* LoginVC.swift */,
 				DD6396592A2F6818006546E1 /* CustomTextField.swift */,
 				DD63965B2A2F685A006546E1 /* BaseInputView.swift */,
 				DD63965D2A2F6865006546E1 /* BaseUIView.swift */,
@@ -328,6 +328,7 @@
 			files = (
 				449E995F2A2F655700762D98 /* TabBarViewController.swift in Sources */,
 				449E99612A2F656E00762D98 /* HomeVC.swift in Sources */,
+				5BF0D62F2A3085C900FDD4D1 /* LoginVC.swift in Sources */,
 				449E99652A2F658C00762D98 /* ProfileVC.swift in Sources */,
 				449E99632A2F657B00762D98 /* ParkingHistoryVC.swift in Sources */,
 				DD63965A2A2F6818006546E1 /* CustomTextField.swift in Sources */,
@@ -335,7 +336,6 @@
 				DD6396642A2F6F42006546E1 /* CustomSecondaryButton.swift in Sources */,
 				DDE3E68C2A2DFD6B008F4FF8 /* SceneDelegate.swift in Sources */,
 				DD6396622A2F69A6006546E1 /* CustomButton.swift in Sources */,
-				DD6396662A2F7285006546E1 /* LoginVC.swift in Sources */,
 				DD6396602A2F692A006546E1 /* ViewControllerAppearanceProtocol.swift in Sources */,
 				DD63965C2A2F685B006546E1 /* BaseInputView.swift in Sources */,
 				DD63965E2A2F6865006546E1 /* BaseUIView.swift in Sources */,
