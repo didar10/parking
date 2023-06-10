@@ -22,13 +22,29 @@ final class LoginViewModel {
         self.dataManager = dataManager
     }
     
+    private func checkFields() -> Bool {
+        if email.isEmpty {
+            viewModelOutput?.loginFailure(error: "Введите пожалуйста email")
+            return false
+        }
+        
+        if password.isEmpty {
+            viewModelOutput?.loginFailure(error: "Введите пожалуйста пароль")
+            return false
+        }
+        
+        return true
+    }
+    
     func handleLogin() {
-        dataManager.signIn(email: email, password: password) { [weak self] isSuccess, error in
-            guard let self else { return }
-            if isSuccess {
-                self.viewModelOutput?.loginSuccess()
-            } else {
-                self.viewModelOutput?.loginFailure(error: error ?? "")
+        if checkFields() {
+            dataManager.signIn(email: email, password: password) { [weak self] isSuccess, error in
+                guard let self else { return }
+                if isSuccess {
+                    self.viewModelOutput?.loginSuccess()
+                } else {
+                    self.viewModelOutput?.loginFailure(error: error ?? "")
+                }
             }
         }
     }

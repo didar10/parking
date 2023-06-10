@@ -25,21 +25,47 @@ final class RegistrationViewModel {
         self.dataManager = dataManager
     }
     
+    private func checkFields() -> Bool {
+        if fullName.isEmpty {
+            viewModelOutput?.registrationFailure(error: "Введите пожалуйста полное имя")
+            return false
+        }
+        
+        if phone.isEmpty {
+            viewModelOutput?.registrationFailure(error: "Введите пожалуйста телефонный номер")
+            return false
+        }
+        
+        if email.isEmpty {
+            viewModelOutput?.registrationFailure(error: "Введите пожалуйста email")
+            return false
+        }
+        
+        if password.isEmpty {
+            viewModelOutput?.registrationFailure(error: "Введите пожалуйста пароль")
+            return false
+        }
+        
+        return true
+    }
+    
     func handleRegistration() {
-        dataManager.createUser(email: email, password: password) { [weak self] isSuccess, error in
-            guard let self else { return }
-            if isSuccess {
-                DispatchQueue.global().asyncAfter(deadline: .now() + 0.7) {
-                    self.dataManager.saveUserData(fio: self.fullName, phone: self.phone, email: self.email) { isSuccess, error in
-                        if isSuccess {
-                            self.viewModelOutput?.registrationSuccess()
-                        } else {
-                            self.viewModelOutput?.registrationFailure(error: error ?? "")
+        if checkFields() {
+            dataManager.createUser(email: email, password: password) { [weak self] isSuccess, error in
+                guard let self else { return }
+                if isSuccess {
+                    DispatchQueue.global().asyncAfter(deadline: .now() + 0.7) {
+                        self.dataManager.saveUserData(fio: self.fullName, phone: self.phone, email: self.email) { isSuccess, error in
+                            if isSuccess {
+                                self.viewModelOutput?.registrationSuccess()
+                            } else {
+                                self.viewModelOutput?.registrationFailure(error: error ?? "")
+                            }
                         }
                     }
+                } else {
+                    self.viewModelOutput?.registrationFailure(error: error ?? "")
                 }
-            } else {
-                self.viewModelOutput?.registrationFailure(error: error ?? "")
             }
         }
     }

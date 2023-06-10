@@ -117,6 +117,7 @@ extension RegistrationVC: ViewControllerAppearanceProtocol {
         phoneInputView.textField.newPlaceholder = "Телефон"
         emailInputView.titleLabel.text = "Email"
         emailInputView.textField.newPlaceholder = "Email"
+        emailInputView.textField.keyboardType = .emailAddress
         passwordInputView.titleLabel.text = "Пароль"
         passwordInputView.textField.newPlaceholder = "Пароль"
     }

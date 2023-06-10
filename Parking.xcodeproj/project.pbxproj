@@ -27,6 +27,8 @@
 		5BDEF8722A34792000E63AF0 /* BaseUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDEF8712A34792000E63AF0 /* BaseUITableViewCell.swift */; };
 		5BDEF8742A34793E00E63AF0 /* CarDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDEF8732A34793E00E63AF0 /* CarDetailCell.swift */; };
 		5BDEF8762A349D0100E63AF0 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDEF8752A349D0100E63AF0 /* BaseVC.swift */; };
+		5BDEF8782A34ADFC00E63AF0 /* PlacesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDEF8772A34ADFC00E63AF0 /* PlacesVC.swift */; };
+		5BDEF87A2A34AE4F00E63AF0 /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDEF8792A34AE4F00E63AF0 /* PlaceCell.swift */; };
 		DD63965A2A2F6818006546E1 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6396592A2F6818006546E1 /* CustomTextField.swift */; };
 		DD63965C2A2F685B006546E1 /* BaseInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD63965B2A2F685A006546E1 /* BaseInputView.swift */; };
 		DD63965E2A2F6865006546E1 /* BaseUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD63965D2A2F6865006546E1 /* BaseUIView.swift */; };
@@ -60,6 +62,8 @@
 		5BDEF8712A34792000E63AF0 /* BaseUITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUITableViewCell.swift; sourceTree = "<group>"; };
 		5BDEF8732A34793E00E63AF0 /* CarDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailCell.swift; sourceTree = "<group>"; };
 		5BDEF8752A349D0100E63AF0 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		5BDEF8772A34ADFC00E63AF0 /* PlacesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesVC.swift; sourceTree = "<group>"; };
+		5BDEF8792A34AE4F00E63AF0 /* PlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
 		7CEEDBDDCE8606B22DE7903D /* Pods-Parking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parking.debug.xcconfig"; path = "Target Support Files/Pods-Parking/Pods-Parking.debug.xcconfig"; sourceTree = "<group>"; };
 		BE3129CBD7E81B15AF97EC8B /* Pods-Parking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parking.release.xcconfig"; path = "Target Support Files/Pods-Parking/Pods-Parking.release.xcconfig"; sourceTree = "<group>"; };
 		D08E82232B82554243EF65DA /* Pods_Parking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +154,8 @@
 				5BDEF86D2A34777B00E63AF0 /* CarDetailVC.swift */,
 				5BDEF86F2A34787100E63AF0 /* CarDetailViewModel.swift */,
 				5BDEF8732A34793E00E63AF0 /* CarDetailCell.swift */,
+				5BDEF8772A34ADFC00E63AF0 /* PlacesVC.swift */,
+				5BDEF8792A34AE4F00E63AF0 /* PlaceCell.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -402,6 +408,7 @@
 			files = (
 				449E995F2A2F655700762D98 /* TabBarViewController.swift in Sources */,
 				5BDEF1FB2A30EF5E007F8F4B /* DataManager.swift in Sources */,
+				5BDEF87A2A34AE4F00E63AF0 /* PlaceCell.swift in Sources */,
 				449E99612A2F656E00762D98 /* HomeVC.swift in Sources */,
 				44C2DD2B2A345C8F007E5C7B /* HomeViewModel.swift in Sources */,
 				449E99652A2F658C00762D98 /* ProfileVC.swift in Sources */,
@@ -418,6 +425,7 @@
 				5BDEF85E2A3450A300E63AF0 /* LoginViewModel.swift in Sources */,
 				DDE3E68C2A2DFD6B008F4FF8 /* SceneDelegate.swift in Sources */,
 				5BDEF8662A34550E00E63AF0 /* ProfileViewModel.swift in Sources */,
+				5BDEF8782A34ADFC00E63AF0 /* PlacesVC.swift in Sources */,
 				5BDEF1F92A30EB62007F8F4B /* RegistrationViewModel.swift in Sources */,
 				DD6396622A2F69A6006546E1 /* CustomButton.swift in Sources */,
 				DD6396602A2F692A006546E1 /* ViewControllerAppearanceProtocol.swift in Sources */,
