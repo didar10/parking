@@ -59,12 +59,12 @@ extension YMKCluster {
         UIGraphicsBeginImageContext(iconSize)
         let ctx = UIGraphicsGetCurrentContext()!
         
-        ctx.setFillColor(CustomColors.mainDeepBlue.cgColor)
+//        ctx.setFillColor(CustomColors.mainDeepBlue.cgColor)
         ctx.fillEllipse(in: CGRect(
             origin: .zero,
             size: CGSize(width: 2 * externalRadius, height: 2 * externalRadius)));
         
-        ctx.setFillColor(CustomColors.mainRed.cgColor)
+//        ctx.setFillColor(CustomColors.mainRed.cgColor)
         ctx.fillEllipse(in: CGRect(
             origin: CGPoint(x: externalRadius - internalRadius, y: externalRadius - internalRadius),
             size: CGSize(width: 2 * internalRadius, height: 2 * internalRadius)));
@@ -81,4 +81,30 @@ extension YMKCluster {
     }
     
     
+}
+
+import Foundation
+import UIKit
+
+class Observer<T> {
+    typealias Listener = (T) -> ()
+    
+    private var listener: Listener?
+    
+    var value: T {
+        didSet {
+            listener?(value)
+        }
+    }
+    
+    init(value: T) {
+        self.value = value
+    }
+    
+    private var observerBlock: ((T?) -> Void)?
+    
+    func bind(listener: @escaping Listener) {
+        self.listener = listener
+        listener(value)
+    }
 }
