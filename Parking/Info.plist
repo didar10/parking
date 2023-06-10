@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>LOCATION</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>LOCATION</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>LOCATION</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
