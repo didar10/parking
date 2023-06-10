@@ -20,7 +20,9 @@ final class ProfileVC: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    let mainButton = CustomButton(title: "Войти")
+    let settingsButton = CustomButton(title: "Настройки профиля")
+    let carDetailButton = CustomButton(title: "Данные машины")
+    let mainButton = CustomButton(title: "Выйти")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,18 @@ final class ProfileVC: UIViewController {
 
     @objc private func handleLogout() {
         viewModel.logOut()
+    }
+    
+    @objc private func handleOpenSettings() {
+        let vc = ProfileSettingsVC()
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc private func handleOpenCarDetail() {
+        let vc = CarDetailVC()
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -55,18 +69,33 @@ extension ProfileVC: ProfileViewModelOutput {
 extension ProfileVC: ViewControllerAppearanceProtocol {
     func setupUI() {
         configureViews()
+        view.addSubview(settingsButton)
         view.addSubview(mainButton)
+        view.addSubview(carDetailButton)
         setupConstraints()
         addActionsForUIElements()
     }
     
     func configureViews() {
         view.backgroundColor = .white
+        navigationItem.title = "Профиль"
     }
     
     func setupConstraints() {
-        mainButton.snp.makeConstraints { make in
+        settingsButton.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(20)
+            make.leading.trailing.equalToSuperview().inset(30)
+            make.height.equalTo(48)
+        }
+        
+        carDetailButton.snp.makeConstraints { make in
+            make.top.equalTo(settingsButton.snp.bottom).inset(-20)
+            make.leading.trailing.equalToSuperview().inset(30)
+            make.height.equalTo(48)
+        }
+        
+        mainButton.snp.makeConstraints { make in
+            make.top.equalTo(carDetailButton.snp.bottom).inset(-20)
             make.leading.trailing.equalToSuperview().inset(30)
             make.height.equalTo(48)
         }
@@ -74,6 +103,8 @@ extension ProfileVC: ViewControllerAppearanceProtocol {
     
     func addActionsForUIElements() {
         mainButton.addTarget(self, action: #selector(handleLogout), for: .touchUpInside)
+        settingsButton.addTarget(self, action: #selector(handleOpenSettings), for: .touchUpInside)
+        carDetailButton.addTarget(self, action: #selector(handleOpenCarDetail), for: .touchUpInside)
     }
 }
 

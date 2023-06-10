@@ -29,7 +29,15 @@ final class RegistrationViewModel {
         dataManager.createUser(email: email, password: password) { [weak self] isSuccess, error in
             guard let self else { return }
             if isSuccess {
-                self.viewModelOutput?.registrationSuccess()
+                DispatchQueue.global().asyncAfter(deadline: .now() + 0.7) {
+                    self.dataManager.saveUserData(fio: self.fullName, phone: self.phone, email: self.email) { isSuccess, error in
+                        if isSuccess {
+                            self.viewModelOutput?.registrationSuccess()
+                        } else {
+                            self.viewModelOutput?.registrationFailure(error: error ?? "")
+                        }
+                    }
+                }
             } else {
                 self.viewModelOutput?.registrationFailure(error: error ?? "")
             }

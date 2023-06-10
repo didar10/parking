@@ -13,7 +13,16 @@ class TabBarViewController: UITabBarController {
         super.viewDidLoad()
         configureTabBar()
         
-        viewControllers = [HomeVC(), ParkingHistoryVC(), ProfileVC()]
+        let homeVC = HomeVC()
+        let homeNav = UINavigationController(rootViewController: homeVC)
+        
+        let historyVC = ParkingHistoryVC()
+        let historyNav = UINavigationController(rootViewController: historyVC)
+        
+        let profileVC = ProfileVC()
+        let profileNav = UINavigationController(rootViewController: profileVC)
+        
+        viewControllers = [homeNav, historyNav, profileNav]
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -21,11 +30,11 @@ class TabBarViewController: UITabBarController {
         
         // Customize the tab bar items
         guard let items = tabBar.items else { return }
-        items[0].title = "First"
+        items[0].title = "Бронирование"
         items[0].image = UIImage(named: "NewHome")?.withRenderingMode(.alwaysTemplate)
-        items[1].title = "Second"
+        items[1].title = "Мои парковки"
         items[1].image = UIImage(named: "newRecordsSelected")?.withRenderingMode(.alwaysTemplate)
-        items[2].title = "Third"
+        items[2].title = "Личный кабинет"
         items[2].image = UIImage(named: "newProfileSelected")?.withRenderingMode(.alwaysTemplate)
         
     }
@@ -34,17 +43,8 @@ class TabBarViewController: UITabBarController {
     func configureTabBar() {
         tabBar.backgroundColor = .white
         tabBar.unselectedItemTintColor = .systemGray
-        tabBar.tintColor = .systemGreen
+        tabBar.tintColor = .systemBlue
         tabBar.barTintColor = .white
-        tabBar.layer.borderWidth = 1
-        tabBar.layer.borderColor = UIColor.systemGreen.cgColor
-        tabBar.layer.cornerRadius = 25
-        tabBar.layer.shadowRadius = 5
-        tabBar.layer.shadowOpacity = 0.5
-        tabBar.layer.shadowOffset = CGSize(width: 1, height: 1)
-        tabBar.layer.shadowColor = UIColor.systemGreen.cgColor
-        tabBar.clipsToBounds = true
-        tabBar.layer.masksToBounds = true
         delegate = self
     }
     
