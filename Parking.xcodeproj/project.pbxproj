@@ -12,7 +12,12 @@
 		449E99612A2F656E00762D98 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449E99602A2F656E00762D98 /* HomeVC.swift */; };
 		449E99632A2F657B00762D98 /* ParkingHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449E99622A2F657B00762D98 /* ParkingHistoryVC.swift */; };
 		449E99652A2F658C00762D98 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449E99642A2F658C00762D98 /* ProfileVC.swift */; };
-		5BF0D62F2A3085C900FDD4D1 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF0D62E2A3085C900FDD4D1 /* LoginVC.swift */; };
+		5BDEF1F52A30E495007F8F4B /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDEF1F42A30E495007F8F4B /* RegistrationVC.swift */; };
+		5BDEF1F92A30EB62007F8F4B /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDEF1F82A30EB62007F8F4B /* RegistrationViewModel.swift */; };
+		5BDEF1FB2A30EF5E007F8F4B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDEF1FA2A30EF5E007F8F4B /* DataManager.swift */; };
+		5BDEF85E2A3450A300E63AF0 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDEF85D2A3450A300E63AF0 /* LoginViewModel.swift */; };
+		5BDEF8642A3452D400E63AF0 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDEF8602A34524F00E63AF0 /* LoginVC.swift */; };
+		5BDEF8662A34550E00E63AF0 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDEF8652A34550D00E63AF0 /* ProfileViewModel.swift */; };
 		DD63965A2A2F6818006546E1 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6396592A2F6818006546E1 /* CustomTextField.swift */; };
 		DD63965C2A2F685B006546E1 /* BaseInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD63965B2A2F685A006546E1 /* BaseInputView.swift */; };
 		DD63965E2A2F6865006546E1 /* BaseUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD63965D2A2F6865006546E1 /* BaseUIView.swift */; };
@@ -31,7 +36,12 @@
 		449E99602A2F656E00762D98 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		449E99622A2F657B00762D98 /* ParkingHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingHistoryVC.swift; sourceTree = "<group>"; };
 		449E99642A2F658C00762D98 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
-		5BF0D62E2A3085C900FDD4D1 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginVC.swift; path = ../../../../../Downloads/LoginVC.swift; sourceTree = "<group>"; };
+		5BDEF1F42A30E495007F8F4B /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
+		5BDEF1F82A30EB62007F8F4B /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		5BDEF1FA2A30EF5E007F8F4B /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		5BDEF85D2A3450A300E63AF0 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		5BDEF8602A34524F00E63AF0 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		5BDEF8652A34550D00E63AF0 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		7CEEDBDDCE8606B22DE7903D /* Pods-Parking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parking.debug.xcconfig"; path = "Target Support Files/Pods-Parking/Pods-Parking.debug.xcconfig"; sourceTree = "<group>"; };
 		BE3129CBD7E81B15AF97EC8B /* Pods-Parking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parking.release.xcconfig"; path = "Target Support Files/Pods-Parking/Pods-Parking.release.xcconfig"; sourceTree = "<group>"; };
 		D08E82232B82554243EF65DA /* Pods_Parking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				449E99642A2F658C00762D98 /* ProfileVC.swift */,
+				5BDEF8652A34550D00E63AF0 /* ProfileViewModel.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -125,6 +136,45 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5BDEF1F62A30E49C007F8F4B /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				DD6396612A2F69A6006546E1 /* CustomButton.swift */,
+				DD6396632A2F6F42006546E1 /* CustomSecondaryButton.swift */,
+				DD6396592A2F6818006546E1 /* CustomTextField.swift */,
+				DD63965B2A2F685A006546E1 /* BaseInputView.swift */,
+				DD63965D2A2F6865006546E1 /* BaseUIView.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		5BDEF1F72A30E4A8007F8F4B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5BDEF1FA2A30EF5E007F8F4B /* DataManager.swift */,
+				DD63965F2A2F692A006546E1 /* ViewControllerAppearanceProtocol.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		5BDEF85F2A34524F00E63AF0 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				5BDEF85D2A3450A300E63AF0 /* LoginViewModel.swift */,
+				5BDEF8602A34524F00E63AF0 /* LoginVC.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		5BDEF8632A34526A00E63AF0 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				5BDEF1F42A30E495007F8F4B /* RegistrationVC.swift */,
+				5BDEF1F82A30EB62007F8F4B /* RegistrationViewModel.swift */,
+			);
+			path = Registration;
 			sourceTree = "<group>";
 		};
 		9425981D7759D3F197442202 /* Frameworks */ = {
@@ -138,13 +188,10 @@
 		DD6396582A2F67C7006546E1 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
-				5BF0D62E2A3085C900FDD4D1 /* LoginVC.swift */,
-				DD6396592A2F6818006546E1 /* CustomTextField.swift */,
-				DD63965B2A2F685A006546E1 /* BaseInputView.swift */,
-				DD63965D2A2F6865006546E1 /* BaseUIView.swift */,
-				DD63965F2A2F692A006546E1 /* ViewControllerAppearanceProtocol.swift */,
-				DD6396612A2F69A6006546E1 /* CustomButton.swift */,
-				DD6396632A2F6F42006546E1 /* CustomSecondaryButton.swift */,
+				5BDEF85F2A34524F00E63AF0 /* Login */,
+				5BDEF8632A34526A00E63AF0 /* Registration */,
+				5BDEF1F62A30E49C007F8F4B /* CustomViews */,
+				5BDEF1F72A30E4A8007F8F4B /* Helpers */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
@@ -155,7 +202,6 @@
 				449E995E2A2F655700762D98 /* TabBarViewController.swift */,
 				449E99662A2F6B6A00762D98 /* Home */,
 				449E99672A2F6B7300762D98 /* History */,
-				449E99682A2F6B8000762D98 /* Profile */,
 			);
 			path = Yerzhan;
 			sourceTree = "<group>";
@@ -184,6 +230,7 @@
 				DDE3E6892A2DFD6B008F4FF8 /* AppDelegate.swift */,
 				DDE3E68B2A2DFD6B008F4FF8 /* SceneDelegate.swift */,
 				DD6396582A2F67C7006546E1 /* Authorization */,
+				449E99682A2F6B8000762D98 /* Profile */,
 				DD6396692A2F7395006546E1 /* Yerzhan */,
 				DDE3E6922A2DFD6D008F4FF8 /* Assets.xcassets */,
 				DDE3E69D2A2E012C008F4FF8 /* GoogleService-Info.plist */,
@@ -327,14 +374,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				449E995F2A2F655700762D98 /* TabBarViewController.swift in Sources */,
+				5BDEF1FB2A30EF5E007F8F4B /* DataManager.swift in Sources */,
 				449E99612A2F656E00762D98 /* HomeVC.swift in Sources */,
-				5BF0D62F2A3085C900FDD4D1 /* LoginVC.swift in Sources */,
 				449E99652A2F658C00762D98 /* ProfileVC.swift in Sources */,
+				5BDEF8642A3452D400E63AF0 /* LoginVC.swift in Sources */,
 				449E99632A2F657B00762D98 /* ParkingHistoryVC.swift in Sources */,
+				5BDEF1F52A30E495007F8F4B /* RegistrationVC.swift in Sources */,
 				DD63965A2A2F6818006546E1 /* CustomTextField.swift in Sources */,
 				DDE3E68A2A2DFD6B008F4FF8 /* AppDelegate.swift in Sources */,
 				DD6396642A2F6F42006546E1 /* CustomSecondaryButton.swift in Sources */,
+				5BDEF85E2A3450A300E63AF0 /* LoginViewModel.swift in Sources */,
 				DDE3E68C2A2DFD6B008F4FF8 /* SceneDelegate.swift in Sources */,
+				5BDEF8662A34550E00E63AF0 /* ProfileViewModel.swift in Sources */,
+				5BDEF1F92A30EB62007F8F4B /* RegistrationViewModel.swift in Sources */,
 				DD6396622A2F69A6006546E1 /* CustomButton.swift in Sources */,
 				DD6396602A2F692A006546E1 /* ViewControllerAppearanceProtocol.swift in Sources */,
 				DD63965C2A2F685B006546E1 /* BaseInputView.swift in Sources */,
