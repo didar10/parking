@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class RegistrationVC: UIViewController {
+final class RegistrationVC: BaseVC {
     var viewModel: RegistrationViewModel
     
     init(viewModel: RegistrationViewModel = RegistrationViewModel()) {
@@ -26,6 +26,7 @@ final class RegistrationVC: UIViewController {
     let emailInputView = BaseInputView()
     let passwordInputView = BaseInputView()
     let mainButton = CustomButton(title: "Регистрация")
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,12 +50,14 @@ final class RegistrationVC: UIViewController {
     }
     
     @objc private func handleRegistration() {
+        showLoadingIndicator()
         viewModel.handleRegistration()
     }
 }
 
 extension RegistrationVC: RegistrationViewModelOutput {
     func registrationSuccess() {
+        hideLoadingIndicator()
         let scene = UIApplication.shared.connectedScenes.first
         if let scene {
             if let sd: SceneDelegate = (scene.delegate as? SceneDelegate) {
@@ -64,6 +67,7 @@ extension RegistrationVC: RegistrationViewModelOutput {
     }
     
     func registrationFailure(error: String) {
+        hideLoadingIndicator()
         let alert = UIAlertController(title: error, message: nil, preferredStyle: .alert)
         present(alert, animated: true)
         

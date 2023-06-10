@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class LoginVC: UIViewController {
+final class LoginVC: BaseVC {
     var viewModel: LoginViewModel
     
     init(viewModel: LoginViewModel = LoginViewModel()) {
@@ -45,12 +45,14 @@ final class LoginVC: UIViewController {
     }
     
     @objc private func handleLogin() {
+        showLoadingIndicator()
         viewModel.handleLogin()
     }
 }
 
 extension LoginVC: LoginViewModelOutput {
     func loginSuccess() {
+        hideLoadingIndicator()
         let scene = UIApplication.shared.connectedScenes.first
         if let scene {
             if let sd: SceneDelegate = (scene.delegate as? SceneDelegate) {
@@ -60,6 +62,7 @@ extension LoginVC: LoginViewModelOutput {
     }
     
     func loginFailure(error: String) {
+        hideLoadingIndicator()
         let alert = UIAlertController(title: error, message: nil, preferredStyle: .alert)
         present(alert, animated: true)
         
