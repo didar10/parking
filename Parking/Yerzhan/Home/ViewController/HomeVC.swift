@@ -16,7 +16,7 @@ class HomeVC: UIViewController {
     
     var homePointObjectsCollection: YMKMapObjectCollection!
     
-    var imageProvider = UIImage(named: "")
+    var imageProvider = UIImage(named: "NewClinicPin")
 
     let mapAnimation = YMKAnimation(
         type: YMKAnimationType.smooth, duration: 0.8)
@@ -39,7 +39,7 @@ class HomeVC: UIViewController {
     
     func callToViewModel() {
         viewModel.configureLocationManager()
-        viewModel.setupArray()
+//        viewModel.setupArray()
         viewModel.mapCenter.bind { [weak self] value in
             guard let self else { return }
             guard let value else { return }
@@ -49,7 +49,7 @@ class HomeVC: UIViewController {
         viewModel.nearestAddressesArray.bind { [weak self] value in
             guard let self else { return }
             guard let value else { return }
-            
+            self.setupAfter(address: value)
         }
     }
     
@@ -147,6 +147,7 @@ extension HomeVC: ViewControllerAppearanceProtocol {
             view.addSubview(mapView)
             mapView.addSubview(buttonsStack)
         }
+        setupMapView()
         addActionsForUIElements()
         configureViews()
         setupConstraints()
@@ -155,7 +156,7 @@ extension HomeVC: ViewControllerAppearanceProtocol {
     func configureViews() {
         [zoomInButton, zoomOutButton, currentLocationButton].forEach { button in
             button.backgroundColor = .white
-            button.layer.borderColor =  UIColor.systemBlue.cgColor
+            button.layer.borderColor =  UIColor.systemGray.cgColor
             button.layer.borderWidth = 1
             button.frame = CGRect(x: 0, y: 0, width: 56, height: 56)
             button.widthAnchor.constraint(equalToConstant: 56).isActive = true

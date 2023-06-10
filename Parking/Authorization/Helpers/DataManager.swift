@@ -18,6 +18,14 @@ final class DataManager {
         return database.collection("cars")
     }
     
+    private var parkingAreasReference: CollectionReference {
+        return database.collection("parkingArea")
+    }
+    
+    private var parkingSpacesReference: CollectionReference {
+        return database.collection("parkingSpaces")
+    }
+    
     func signIn(email: String, password: String, completion: @escaping(_ isSuccess: Bool, _ error: String?) -> ()) {
         Auth.auth().signIn(withEmail: email, password: password) { result, error in
             if let error = error as? NSError {
@@ -72,6 +80,29 @@ final class DataManager {
                 print("Error saving channel: \(error.localizedDescription)")
             } else {
                 completion(true, nil)
+            }
+        }
+    }
+    
+    func getParkingArea(completion: @escaping(ParkingModel?) -> ()) {
+        parkingAreasReference.getDocuments { snapshot, error in
+            if let snapshot {
+                if let first = snapshot.documents.first {
+                    if let address = first.get("address") as? String,
+                       let lat = first.get("lat") as? String,
+                       let lon = first.get("lon") as? String {
+                        let parkingModel = ParkingModel(address: address, lat: lat, lon: lon)
+                        completion(parkingModel)
+                    } else {
+                        print("error getting field")
+                        completion(nil)
+                    }
+                } else {
+                    if let error {
+                        print(error)
+                    }
+                    completion(nil)
+                }
             }
         }
     }
