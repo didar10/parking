@@ -13,7 +13,7 @@ protocol HomeViewModelInput: NSObject {
     func startSetupLocation()
 }
 
-struct ParkingModel {
+struct ParkingModel: Codable, Equatable {
 //    let name: String?
     let address: String?
 //    let capacity: Int?

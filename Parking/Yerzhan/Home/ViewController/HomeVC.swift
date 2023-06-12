@@ -29,6 +29,8 @@ class HomeVC: UIViewController {
     
     var gcpointsPlmCollection: YMKClusterizedPlacemarkCollection!
     
+    var lastPlacemark: YMKPlacemarkMapObject?
+    
     lazy var buttonsStack = UIStackView(arrangedSubviews: [zoomInButton, zoomOutButton, currentLocationButton])
     
     override func viewDidLoad() {
@@ -39,7 +41,6 @@ class HomeVC: UIViewController {
     
     func callToViewModel() {
         viewModel.configureLocationManager()
-//        viewModel.setupArray()
         viewModel.mapCenter.bind { [weak self] value in
             guard let self else { return }
             guard let value else { return }
@@ -212,40 +213,30 @@ extension HomeVC: YMKClusterListener, YMKClusterTapListener, YMKMapObjectTapList
     }
     
     func onMapObjectTap(with mapObject: YMKMapObject, point: YMKPoint) -> Bool {
-//        mainView.moveMapAfterUpdateLocation(center: point, zoom: 17)
-//        guard let placemark = mapObject as? YMKPlacemarkMapObject else { return false}
+        moveMapAfterUpdateLocation(center: point, zoom: 17)
+        guard let placemark = mapObject as? YMKPlacemarkMapObject else { return false}
 //
-//        placemark.setIconWith(ImageConstants.MapImages.closestLabPin!) {
-//            self.scrolling?(false)
-//
+//        placemark.setIconWith(UIImage(named: "NewClosestClinicPin")!) {
+////            self.scrolling?(false)
+////
 //            if let lastPlacemark = self.lastPlacemark {
-//                lastPlacemark.setIconWith(self.mainView.imageProvider!)
+//                lastPlacemark.setIconWith(self .imageProvider!)
 //            }
-//
+////
 //            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
 //                self.lastPlacemark = placemark
 //            }
 //        }
-//
-//        scrollForTap = { isSuccess in
-//            if isSuccess {
-//                if let lastPlacemark = self.lastPlacemark {
-//                    lastPlacemark.setIconWith(self.mainView.imageProvider!)
-//                }
-//            } else {
-//                placemark.setIconWith(ImageConstants.MapImages.closestLabPin!)
-//            }
-//        }
-//
-//        if let userData = placemark.userData as? GetLabAddress {
-//            if let array =  delegate?.viewModel.nearestAddressesArray.value {
-//                if let p = array.firstIndex(where: { $0 == userData }) {
-//                    let indexPath = IndexPath(item: p, section: 0)
-//                    self.mainView.collectionView.scrollToItem(at: indexPath, at: [.centeredVertically, .centeredHorizontally], animated: true)
-//                }
-//            }
-//        }
-//
+        if let userData = placemark.userData as? ParkingModel {
+            if let array = viewModel.nearestAddressesArray.value {
+                if let p = array.firstIndex(where: { $0 == userData }) {
+                    let vc = PlacesVC()
+                    navigationController?.pushViewController(vc, animated: true)
+                }
+                
+            }
+        }
+
         return true
     }
        
