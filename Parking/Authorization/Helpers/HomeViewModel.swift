@@ -13,15 +13,6 @@ protocol HomeViewModelInput: NSObject {
     func startSetupLocation()
 }
 
-struct ParkingModel: Codable, Equatable {
-//    let name: String?
-    let address: String?
-//    let capacity: Int?
-//    let price: Int?
-    let lat: String?
-    let lon: String?
-}
-
 final class HomeViewModel: NSObject {
     
     private let dataManager: DataManager

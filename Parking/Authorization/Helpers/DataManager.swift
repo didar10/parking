@@ -107,6 +107,24 @@ final class DataManager {
         }
     }
     
+    func getParkingSpaces(completion: @escaping([ParkingSpace]?) -> ()) {
+        parkingSpacesReference.getDocuments { snapshot, error in
+            if let snapshot {
+                var res = [ParkingSpace]()
+                for i in snapshot.documents {
+                    if let fromDate = i.get("fromDate") as? String,
+                       let isAvailable = i.get("isAvailable") as? Bool,
+                       let number = i.get("number") as? String,
+                       let toDate = i.get("toDate") as? String {
+                        let spaceModel = ParkingSpace(fromDate: fromDate, isAvailable: isAvailable, number: number, toDate: toDate)
+                        res.append(spaceModel)
+                    }
+                }
+                completion(res)
+            }
+        }
+    }
+    
     func getCarDetail(completion: @escaping(CarDetail?) -> ()) {
         guard let uid = Auth.auth().currentUser?.uid else {
             return
