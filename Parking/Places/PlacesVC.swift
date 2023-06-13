@@ -73,7 +73,7 @@ extension PlacesVC: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier:  PlaceCell.description(), for: indexPath) as! PlaceCell
 //        cell.alpha = 0 // Initially alpha 0
         let text = busSeatNumDict[indexPath.row]!
-//
+
 //        if text == "" || text == "2"
 //        {
 //            cell.alpha = 0

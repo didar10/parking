@@ -233,7 +233,6 @@ extension HomeVC: YMKClusterListener, YMKClusterTapListener, YMKMapObjectTapList
                     let vc = PlacesVC()
                     navigationController?.pushViewController(vc, animated: true)
                 }
-                
             }
         }
 

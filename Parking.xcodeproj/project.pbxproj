@@ -13,6 +13,7 @@
 		449E99632A2F657B00762D98 /* ParkingHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449E99622A2F657B00762D98 /* ParkingHistoryVC.swift */; };
 		449E99652A2F658C00762D98 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449E99642A2F658C00762D98 /* ProfileVC.swift */; };
 		44C2DD2B2A345C8F007E5C7B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C2DD2A2A345C8F007E5C7B /* HomeViewModel.swift */; };
+		44CD3D2A2A388FE5008EC28F /* PlacesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CD3D292A388FE5008EC28F /* PlacesViewModel.swift */; };
 		5BDEF1F52A30E495007F8F4B /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDEF1F42A30E495007F8F4B /* RegistrationVC.swift */; };
 		5BDEF1F92A30EB62007F8F4B /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDEF1F82A30EB62007F8F4B /* RegistrationViewModel.swift */; };
 		5BDEF1FB2A30EF5E007F8F4B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDEF1FA2A30EF5E007F8F4B /* DataManager.swift */; };
@@ -48,6 +49,7 @@
 		449E99622A2F657B00762D98 /* ParkingHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingHistoryVC.swift; sourceTree = "<group>"; };
 		449E99642A2F658C00762D98 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		44C2DD2A2A345C8F007E5C7B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewModel.swift; path = Parking/Authorization/Helpers/HomeViewModel.swift; sourceTree = SOURCE_ROOT; };
+		44CD3D292A388FE5008EC28F /* PlacesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesViewModel.swift; sourceTree = "<group>"; };
 		5BDEF1F42A30E495007F8F4B /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
 		5BDEF1F82A30EB62007F8F4B /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		5BDEF1FA2A30EF5E007F8F4B /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 		449E99682A2F6B8000762D98 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				44CD3D272A388F15008EC28F /* ViewModel */,
 				449E996B2A2F6BA500762D98 /* ViewController */,
 			);
 			path = Profile;
@@ -148,14 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				449E99642A2F658C00762D98 /* ProfileVC.swift */,
-				5BDEF8652A34550D00E63AF0 /* ProfileViewModel.swift */,
 				5BDEF8672A3466F300E63AF0 /* ProfileSettingsVC.swift */,
-				5BDEF8692A346A6100E63AF0 /* ProfileSettingsViewModel.swift */,
-				5BDEF86D2A34777B00E63AF0 /* CarDetailVC.swift */,
-				5BDEF86F2A34787100E63AF0 /* CarDetailViewModel.swift */,
-				5BDEF8732A34793E00E63AF0 /* CarDetailCell.swift */,
-				5BDEF8772A34ADFC00E63AF0 /* PlacesVC.swift */,
-				5BDEF8792A34AE4F00E63AF0 /* PlaceCell.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -164,6 +160,35 @@
 			isa = PBXGroup;
 			children = (
 				44C2DD2A2A345C8F007E5C7B /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		44CD3D252A388ECD008EC28F /* Places */ = {
+			isa = PBXGroup;
+			children = (
+				5BDEF8792A34AE4F00E63AF0 /* PlaceCell.swift */,
+				5BDEF8772A34ADFC00E63AF0 /* PlacesVC.swift */,
+				44CD3D292A388FE5008EC28F /* PlacesViewModel.swift */,
+			);
+			path = Places;
+			sourceTree = "<group>";
+		};
+		44CD3D262A388EEC008EC28F /* CarDetails */ = {
+			isa = PBXGroup;
+			children = (
+				5BDEF86D2A34777B00E63AF0 /* CarDetailVC.swift */,
+				5BDEF86F2A34787100E63AF0 /* CarDetailViewModel.swift */,
+				5BDEF8732A34793E00E63AF0 /* CarDetailCell.swift */,
+			);
+			path = CarDetails;
+			sourceTree = "<group>";
+		};
+		44CD3D272A388F15008EC28F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5BDEF8692A346A6100E63AF0 /* ProfileSettingsViewModel.swift */,
+				5BDEF8652A34550D00E63AF0 /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -260,9 +285,11 @@
 		DDE3E6882A2DFD6B008F4FF8 /* Parking */ = {
 			isa = PBXGroup;
 			children = (
+				44CD3D262A388EEC008EC28F /* CarDetails */,
 				DDE3E6892A2DFD6B008F4FF8 /* AppDelegate.swift */,
 				DDE3E68B2A2DFD6B008F4FF8 /* SceneDelegate.swift */,
 				DD6396582A2F67C7006546E1 /* Authorization */,
+				44CD3D252A388ECD008EC28F /* Places */,
 				449E99682A2F6B8000762D98 /* Profile */,
 				DD6396692A2F7395006546E1 /* Yerzhan */,
 				DDE3E6922A2DFD6D008F4FF8 /* Assets.xcassets */,
@@ -406,6 +433,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44CD3D2A2A388FE5008EC28F /* PlacesViewModel.swift in Sources */,
 				449E995F2A2F655700762D98 /* TabBarViewController.swift in Sources */,
 				5BDEF1FB2A30EF5E007F8F4B /* DataManager.swift in Sources */,
 				5BDEF87A2A34AE4F00E63AF0 /* PlaceCell.swift in Sources */,
