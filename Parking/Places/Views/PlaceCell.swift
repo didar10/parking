@@ -28,6 +28,17 @@ final class PlaceCell: UICollectionViewCell {
         }
     }
     
+    func generateCells(_ model: ParkingSpace) {
+        if let isAvailable = model.isAvailable {
+            if isAvailable {
+                contentView.backgroundColor = .systemGreen
+            } else {
+                contentView.backgroundColor = .red
+            }
+        }
+        seatNumberLabel.text = model.number
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

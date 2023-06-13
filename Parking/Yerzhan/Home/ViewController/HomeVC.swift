@@ -57,7 +57,6 @@ class HomeVC: UIViewController {
     func setupMapCenter(mapCenter: YMKPoint) {
         self.mapCenter = mapCenter
         moveMapAfterUpdateLocation(center: mapCenter, zoom: 17)
-//        setupHomePointOnMap(mapObjectCollection: homePointObjectsCollection)
     }
     
     func setupHomePointOnMap(mapObjectCollection: YMKMapObjectCollection) {
@@ -231,6 +230,8 @@ extension HomeVC: YMKClusterListener, YMKClusterTapListener, YMKMapObjectTapList
             if let array = viewModel.nearestAddressesArray.value {
                 if let p = array.firstIndex(where: { $0 == userData }) {
                     let vc = PlacesVC()
+                    vc.titleLabel.text = array.first?.address
+                    print("667 \(array.first?.address)")
                     navigationController?.pushViewController(vc, animated: true)
                 }
             }
