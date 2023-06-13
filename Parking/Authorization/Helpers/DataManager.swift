@@ -26,6 +26,10 @@ final class DataManager {
         return database.collection("parkingSpaces")
     }
     
+    private var parkingHistoryReference: CollectionReference {
+        return database.collection("history")
+    }
+    
     func signIn(email: String, password: String, completion: @escaping(_ isSuccess: Bool, _ error: String?) -> ()) {
         Auth.auth().signIn(withEmail: email, password: password) { result, error in
             if let error = error as? NSError {
@@ -107,6 +111,8 @@ final class DataManager {
         }
     }
     
+   
+    
     func getParkingSpaces(completion: @escaping([ParkingSpace]?) -> ()) {
         parkingSpacesReference.getDocuments { snapshot, error in
             if let snapshot {
@@ -121,6 +127,58 @@ final class DataManager {
                     }
                 }
                 completion(res)
+            }
+        }
+    }
+    
+    func saveParkingHistory(data: ParkingHistory, completion: @escaping(_ isSuccess: Bool, _ error: String?) -> ()) {
+        if let userId = Auth.auth().currentUser?.uid {
+            let data = ["parkingTime": "Время: \(data.parkingTime)", "parkingName": data.parkingName, "parkingSpaceNumber": "Место: \(data.parkingSpaceNumber)", "userId": userId]
+            parkingHistoryReference.addDocument(data: data) { error in
+                if let error {
+                    completion(false, "Не получилось!")
+                    print("Error saving channel: \(error.localizedDescription)")
+                } else {
+                    completion(true, nil)
+                }
+            }
+        } else {
+            completion(false, "Не получилось!")
+        }
+    }
+    
+    func getParkingHistory(completion: @escaping([ParkingHistory]?) -> ()) {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            return
+        }
+        let group = DispatchGroup()
+        var parkings: [ParkingHistory]? = []
+        DispatchQueue.global().async { [weak self] in
+            guard let self else { return }
+            self.parkingHistoryReference.whereField("userId", isEqualTo: uid).getDocuments { snapShot, error in
+                if let snapShot {
+                    for document in snapShot.documents {
+                        if let parkingName = document.get("parkingName") as? String,
+                           let parkingSpaceNumber = document.get("parkingSpaceNumber") as? String,
+                           let parkingTime = document.get("parkingTime") as? String {
+                            group.enter()
+                            let item = ParkingHistory(parkingName: parkingName, parkingSpaceNumber: parkingSpaceNumber, parkingTime: parkingTime)
+                            parkings?.append(item)
+                            group.leave()
+                        }
+                    }
+                    
+                    group.notify(queue: .main) {
+                        completion(parkings)
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        if let error {
+                            print(error)
+                            completion(nil)
+                        }
+                    }
+                }
             }
         }
     }
