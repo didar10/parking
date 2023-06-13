@@ -124,3 +124,70 @@ struct ParkingModel: Codable, Equatable {
     let lat: String?
     let lon: String?
 }
+extension UIViewController {
+    func setAlertView(text: String, time: Double) {
+        let alert = UIAlertController(title: "", message: text, preferredStyle: .alert)
+        self.present(alert, animated: true, completion: nil)
+        
+        let when = DispatchTime.now() + time
+        
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            alert.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func dismissByFade(){
+        let transition = CATransition()
+        transition.duration = 0.3
+        transition.type = CATransitionType.fade
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        if let window = view.window {
+            window.layer.backgroundColor = UIColor.white.cgColor
+            window.layer.add(transition, forKey: kCATransition)
+        }
+        self.dismiss(animated: false, completion: nil)
+    }
+    
+    func presentByFade(controller: UIViewController){
+        let transition = CATransition()
+        transition.duration = 0.3
+        transition.type = CATransitionType.fade
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        if let window = view.window {
+            window.layer.backgroundColor = UIColor.white.cgColor
+            window.layer.add(transition, forKey: kCATransition)
+        }
+        present(controller, animated: false, completion: nil)
+    }
+    
+}
+extension UIView {
+    func onTapped(action: (() -> Void)?) {
+        tapAction = action
+        let selector = #selector(handleTap)
+        let recognizer = UITapGestureRecognizer(target: self, action: selector)
+        isUserInteractionEnabled = true
+        addGestureRecognizer(recognizer)
+    }
+}
+
+fileprivate extension UIView {
+    typealias Action = (() -> Void)
+    
+    struct Key { static var id = "tapAction" }
+    
+    var tapAction: Action? {
+        get {
+            return objc_getAssociatedObject(self, &Key.id) as? Action
+        }
+        set {
+            guard let value = newValue else { return }
+            let policy = objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN
+            objc_setAssociatedObject(self, &Key.id, value, policy)
+        }
+    }
+
+    @objc func handleTap(sender: UITapGestureRecognizer) {
+        tapAction?()
+    }
+}

@@ -14,6 +14,8 @@
 		449E99652A2F658C00762D98 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449E99642A2F658C00762D98 /* ProfileVC.swift */; };
 		44C2DD2B2A345C8F007E5C7B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C2DD2A2A345C8F007E5C7B /* HomeViewModel.swift */; };
 		44CD3D2A2A388FE5008EC28F /* PlacesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CD3D292A388FE5008EC28F /* PlacesViewModel.swift */; };
+		44CD3D2C2A38995C008EC28F /* TimeAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CD3D2B2A38995C008EC28F /* TimeAlertVC.swift */; };
+		44CD3D2E2A389C19008EC28F /* CustomDateTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CD3D2D2A389C19008EC28F /* CustomDateTextField.swift */; };
 		5BDEF1F52A30E495007F8F4B /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDEF1F42A30E495007F8F4B /* RegistrationVC.swift */; };
 		5BDEF1F92A30EB62007F8F4B /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDEF1F82A30EB62007F8F4B /* RegistrationViewModel.swift */; };
 		5BDEF1FB2A30EF5E007F8F4B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDEF1FA2A30EF5E007F8F4B /* DataManager.swift */; };
@@ -50,6 +52,8 @@
 		449E99642A2F658C00762D98 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		44C2DD2A2A345C8F007E5C7B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewModel.swift; path = Parking/Authorization/Helpers/HomeViewModel.swift; sourceTree = SOURCE_ROOT; };
 		44CD3D292A388FE5008EC28F /* PlacesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesViewModel.swift; sourceTree = "<group>"; };
+		44CD3D2B2A38995C008EC28F /* TimeAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAlertVC.swift; sourceTree = "<group>"; };
+		44CD3D2D2A389C19008EC28F /* CustomDateTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDateTextField.swift; sourceTree = "<group>"; };
 		5BDEF1F42A30E495007F8F4B /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
 		5BDEF1F82A30EB62007F8F4B /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		5BDEF1FA2A30EF5E007F8F4B /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -167,9 +171,11 @@
 		44CD3D252A388ECD008EC28F /* Places */ = {
 			isa = PBXGroup;
 			children = (
-				5BDEF8792A34AE4F00E63AF0 /* PlaceCell.swift */,
-				5BDEF8772A34ADFC00E63AF0 /* PlacesVC.swift */,
-				44CD3D292A388FE5008EC28F /* PlacesViewModel.swift */,
+				44CD3D332A38A98F008EC28F /* ViewModel */,
+				44CD3D322A38A985008EC28F /* Views */,
+				44CD3D312A38A97E008EC28F /* ViewController */,
+				44CD3D2B2A38995C008EC28F /* TimeAlertVC.swift */,
+				44CD3D2D2A389C19008EC28F /* CustomDateTextField.swift */,
 			);
 			path = Places;
 			sourceTree = "<group>";
@@ -189,6 +195,30 @@
 			children = (
 				5BDEF8692A346A6100E63AF0 /* ProfileSettingsViewModel.swift */,
 				5BDEF8652A34550D00E63AF0 /* ProfileViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		44CD3D312A38A97E008EC28F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5BDEF8772A34ADFC00E63AF0 /* PlacesVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		44CD3D322A38A985008EC28F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5BDEF8792A34AE4F00E63AF0 /* PlaceCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		44CD3D332A38A98F008EC28F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				44CD3D292A388FE5008EC28F /* PlacesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -439,6 +469,7 @@
 				5BDEF87A2A34AE4F00E63AF0 /* PlaceCell.swift in Sources */,
 				449E99612A2F656E00762D98 /* HomeVC.swift in Sources */,
 				44C2DD2B2A345C8F007E5C7B /* HomeViewModel.swift in Sources */,
+				44CD3D2C2A38995C008EC28F /* TimeAlertVC.swift in Sources */,
 				449E99652A2F658C00762D98 /* ProfileVC.swift in Sources */,
 				5BDEF8642A3452D400E63AF0 /* LoginVC.swift in Sources */,
 				449E99632A2F657B00762D98 /* ParkingHistoryVC.swift in Sources */,
@@ -454,6 +485,7 @@
 				DDE3E68C2A2DFD6B008F4FF8 /* SceneDelegate.swift in Sources */,
 				5BDEF8662A34550E00E63AF0 /* ProfileViewModel.swift in Sources */,
 				5BDEF8782A34ADFC00E63AF0 /* PlacesVC.swift in Sources */,
+				44CD3D2E2A389C19008EC28F /* CustomDateTextField.swift in Sources */,
 				5BDEF1F92A30EB62007F8F4B /* RegistrationViewModel.swift in Sources */,
 				DD6396622A2F69A6006546E1 /* CustomButton.swift in Sources */,
 				DD6396602A2F692A006546E1 /* ViewControllerAppearanceProtocol.swift in Sources */,
