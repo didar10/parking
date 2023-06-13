@@ -20,6 +20,7 @@ final class ProfileVC: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    let titleLabel = UILabel()
     let settingsButton = CustomButton(title: "Настройки профиля")
     let carDetailButton = CustomButton(title: "Данные машины")
     let mainButton = CustomButton(title: "Выйти")
@@ -69,6 +70,7 @@ extension ProfileVC: ProfileViewModelOutput {
 extension ProfileVC: ViewControllerAppearanceProtocol {
     func setupUI() {
         configureViews()
+        view.addSubview(titleLabel)
         view.addSubview(settingsButton)
         view.addSubview(mainButton)
         view.addSubview(carDetailButton)
@@ -78,12 +80,20 @@ extension ProfileVC: ViewControllerAppearanceProtocol {
     
     func configureViews() {
         view.backgroundColor = .white
-        navigationItem.title = "Профиль"
+        titleLabel.text = "Профиль"
+        titleLabel.textAlignment = .left
+        titleLabel.textColor = .black
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 28)
     }
     
     func setupConstraints() {
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(8)
+            make.leading.trailing.equalToSuperview().inset(20)
+        }
+        
         settingsButton.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(20)
+            make.top.equalTo(titleLabel.snp.bottom).inset(-20)
             make.leading.trailing.equalToSuperview().inset(30)
             make.height.equalTo(48)
         }
