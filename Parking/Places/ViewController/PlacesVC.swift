@@ -106,16 +106,20 @@ extension PlacesVC: UICollectionViewDelegateFlowLayout {
                 }
                 vc.didDismiss = { [weak self] in
                     guard let self else { return }
+                    OrderItems.time = self.viewModel.fromTime + " - " + self.viewModel.toTime
+                    OrderItems.space = arr[indexPath.item].number ?? ""
+                    OrderItems.name = self.titleLabel.text ?? ""
                     if !self.viewModel.fromTime.isEmpty && !self.viewModel.fromTime.isEmpty {
                         if let check = self.viewModel.checkDetails() {
                             if check {
-                                
+                                let vc = ConfirmOrderVC()
+                                vc.modalPresentationStyle = .overFullScreen
+                                self.navigationController?.pushViewController(vc, animated: true)
                             } else {
                                 let vc = CarDetailVC()
                                 vc.modalPresentationStyle = .overFullScreen
 //                                self.present(vc, animated: true)
                                 self.navigationController?.pushViewController(vc, animated: true)
-
                             }
                         }
                     }

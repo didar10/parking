@@ -231,7 +231,7 @@ extension HomeVC: YMKClusterListener, YMKClusterTapListener, YMKMapObjectTapList
                 if let p = array.firstIndex(where: { $0 == userData }) {
                     let vc = PlacesVC()
                     vc.titleLabel.text = array.first?.address
-                    print("667 \(array.first?.address)")
+                    vc.hidesBottomBarWhenPushed = true
                     navigationController?.pushViewController(vc, animated: true)
                 }
             }
@@ -246,12 +246,6 @@ extension HomeVC: YMKClusterListener, YMKClusterTapListener, YMKMapObjectTapList
     }
   
     func onClusterTap(with cluster: YMKCluster) -> Bool {
-//        let map = mainView.mapView!
-//        let latitude = cluster.appearance.geometry.latitude
-//        let longitude = cluster.appearance.geometry.longitude
-//        let zoom = map.mapWindow.map.cameraPosition.zoom + 4
-//        let movePoint = YMKPoint(latitude: latitude, longitude: longitude)
-//        mainView.moveMapAfterUpdateLocation(center: movePoint, zoom: zoom)
         return true
     }
 }
