@@ -5,7 +5,7 @@
 //  Created by Didar Bakhitzhanov on 14.06.2023.
 //
 
-import Foundation
+import UIKit
 
 final class PaymentMethodDataViewModel: NSObject {
     var data: BankCardModel
