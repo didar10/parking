@@ -27,7 +27,7 @@ class CustomTextField: UITextField {
     
     private func setupAttributedPlaceholder() {
         let attributes = [
-            NSAttributedString.Key.foregroundColor: UIColor.lightGray,
+            NSAttributedString.Key.foregroundColor: UIColor.darkGray,
             NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16, weight: .regular)
         ]
         

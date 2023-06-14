@@ -52,6 +52,8 @@ class ConfirmOrderVC: UIViewController {
     let viewModel = ConfirmOrderViewModel()
     let paymentMethodView = PaymentMethodsView()
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         callToViewModel()
@@ -60,6 +62,13 @@ class ConfirmOrderVC: UIViewController {
     
     func callToViewModel() {
         viewModel.getCarInfo()
+        
+        viewModel.cards.bind { [weak self] cards in
+            guard let self else { return }
+            self.paymentMethodView.paymentMethodsArray = cards
+            self.paymentMethodView.collectionView.reloadData()
+        }
+        
         viewModel.car.bind { [weak self] car in
             guard let self else { return }
             guard let car else { return }
@@ -210,11 +219,34 @@ extension ConfirmOrderVC: PaymentMethodsViewDelegate {
     func didSelect(at indexPath: IndexPath) {
         switch indexPath.section {
         case 0:
-            let vc = AddCardAlertVC(height: 450)
-            present(vc, animated: true)
+           print("")
         default:
-            print("")
+            let vc = AddCardAlertVC(height: 450)
+            vc.cardInputDelegate = self
+            vc.didDismiss = { [weak self] in
+                guard let self else { return }
+                let model = BankCardModel(id: 20202020, number: OrderItems.cardNumber, dateExp: "", type: 0, isDefault: true)
+                let vm = PaymentMethodDataViewModel(data: model, type: .paybox)
+                self.viewModel.cards.value.append(vm)
+                self.paymentMethodView.collectionView.reloadData()
+            }
+            vc.modalPresentationStyle = .overFullScreen
+            present(vc, animated: true)
         }
+    }
+}
+
+extension ConfirmOrderVC: CardInputViewDelegate {
+    func getCardNumber(text: String?) {
+        OrderItems.cardNumber = text ?? ""
+    }
+    
+    func getExperationDate(text: String?) {
+        
+    }
+    
+    func getCardHolderName(text: String?) {
+        
     }
 }
 
@@ -223,6 +255,8 @@ final class ConfirmOrderViewModel: NSObject {
     var dataManager: DataManager
     
     var car: Observer<CarDetail?> = Observer(value: nil)
+    
+    var cards: Observer<[PaymentMethodDataViewModel]> = Observer(value: [])
     
     init(dataManager: DataManager = DataManager()) {
         self.dataManager = dataManager
@@ -319,10 +353,10 @@ final class CardInputView: BaseUIView {
         
         nameTextField.autocapitalizationType = .allCharacters
         
-        numberTextField.placeholder = "0000 0000 0000 0000"
-        expirationTextField.placeholder = "MM/YY"
-        codeTextField.placeholder = "000"
-        nameTextField.placeholder = "Имя на карте"
+        numberTextField.newPlaceholder = "0000 0000 0000 0000"
+        expirationTextField.newPlaceholder = "MM/YY"
+        codeTextField.newPlaceholder = "000"
+        nameTextField.newPlaceholder = "Имя на карте"
         
         [numberStackView, expirationStackView, codeStackView, nameStackView].forEach { s in
             s.axis = .vertical

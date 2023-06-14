@@ -168,6 +168,8 @@ final class AddCardAlertVC: UIViewController, DismissViewControllerProtocol {
     var height: CGFloat
     private let cardView = CardInputView()
     
+    weak var cardInputDelegate: CardInputViewDelegate?
+    
     let continueButton = CustomButton(title: "Продолжить")
     var didDismiss: (() -> ())?
 
@@ -268,7 +270,7 @@ extension AddCardAlertVC: UITextFieldDelegate {
             
             let newString = (text as NSString).replacingCharacters(in: range, with: string)
             textField.text = newString.format(with: "XXXX XXXX XXXX XXXX")
-            
+            self.cardInputDelegate?.getCardNumber(text: newString)
             if let cL = cursorLocation {
                 let textRange = textField.textRange(from: cL, to: cL) //textRangeFromPosition(cL, toPosition: cL)
                 textField.selectedTextRange = textRange
@@ -325,6 +327,7 @@ extension AddCardAlertVC: UITextFieldDelegate {
 //MARK: - CardInputViewDelegate
 extension AddCardAlertVC: CardInputViewDelegate {
     func getCardNumber(text: String?) {
+        OrderItems.cardNumber = text ?? ""
         cardView.numberTextField.text = text
     }
 
