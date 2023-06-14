@@ -15,6 +15,9 @@
 		44C2DD2B2A345C8F007E5C7B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C2DD2A2A345C8F007E5C7B /* HomeViewModel.swift */; };
 		44CD3D2A2A388FE5008EC28F /* PlacesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CD3D292A388FE5008EC28F /* PlacesViewModel.swift */; };
 		44CD3D2C2A38995C008EC28F /* TimeAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CD3D2B2A38995C008EC28F /* TimeAlertVC.swift */; };
+		44CD3D3B2A39A668008EC28F /* ConfirmOrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CD3D3A2A39A668008EC28F /* ConfirmOrderVC.swift */; };
+		44CD3D3D2A39E8EF008EC28F /* PaymentMethodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CD3D3C2A39E8EF008EC28F /* PaymentMethodsView.swift */; };
+		44CD3D3F2A39EAD8008EC28F /* PaymentMethodCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CD3D3E2A39EAD8008EC28F /* PaymentMethodCVCell.swift */; };
 		5BDEF1F52A30E495007F8F4B /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDEF1F42A30E495007F8F4B /* RegistrationVC.swift */; };
 		5BDEF1F92A30EB62007F8F4B /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDEF1F82A30EB62007F8F4B /* RegistrationViewModel.swift */; };
 		5BDEF1FB2A30EF5E007F8F4B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDEF1FA2A30EF5E007F8F4B /* DataManager.swift */; };
@@ -55,6 +58,9 @@
 		44C2DD2A2A345C8F007E5C7B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewModel.swift; path = Parking/Authorization/Helpers/HomeViewModel.swift; sourceTree = SOURCE_ROOT; };
 		44CD3D292A388FE5008EC28F /* PlacesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesViewModel.swift; sourceTree = "<group>"; };
 		44CD3D2B2A38995C008EC28F /* TimeAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAlertVC.swift; sourceTree = "<group>"; };
+		44CD3D3A2A39A668008EC28F /* ConfirmOrderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmOrderVC.swift; sourceTree = "<group>"; };
+		44CD3D3C2A39E8EF008EC28F /* PaymentMethodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodsView.swift; sourceTree = "<group>"; };
+		44CD3D3E2A39EAD8008EC28F /* PaymentMethodCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodCVCell.swift; sourceTree = "<group>"; };
 		5BDEF1F42A30E495007F8F4B /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
 		5BDEF1F82A30EB62007F8F4B /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		5BDEF1FA2A30EF5E007F8F4B /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -229,6 +235,40 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		44CD3D362A39A5E1008EC28F /* ConfirmOrder */ = {
+			isa = PBXGroup;
+			children = (
+				44CD3D392A39A5F3008EC28F /* ViewModel */,
+				44CD3D382A39A5EE008EC28F /* Views */,
+				44CD3D372A39A5E7008EC28F /* ViewContoller */,
+			);
+			path = ConfirmOrder;
+			sourceTree = "<group>";
+		};
+		44CD3D372A39A5E7008EC28F /* ViewContoller */ = {
+			isa = PBXGroup;
+			children = (
+				44CD3D3A2A39A668008EC28F /* ConfirmOrderVC.swift */,
+			);
+			path = ViewContoller;
+			sourceTree = "<group>";
+		};
+		44CD3D382A39A5EE008EC28F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				44CD3D3C2A39E8EF008EC28F /* PaymentMethodsView.swift */,
+				44CD3D3E2A39EAD8008EC28F /* PaymentMethodCVCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		44CD3D392A39A5F3008EC28F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		5BDEF1F62A30E49C007F8F4B /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +361,7 @@
 		DDE3E6882A2DFD6B008F4FF8 /* Parking */ = {
 			isa = PBXGroup;
 			children = (
+				44CD3D362A39A5E1008EC28F /* ConfirmOrder */,
 				44CD3D262A388EEC008EC28F /* CarDetails */,
 				DDE3E6892A2DFD6B008F4FF8 /* AppDelegate.swift */,
 				DDE3E68B2A2DFD6B008F4FF8 /* SceneDelegate.swift */,
@@ -469,9 +510,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44CD3D3F2A39EAD8008EC28F /* PaymentMethodCVCell.swift in Sources */,
 				44CD3D2A2A388FE5008EC28F /* PlacesViewModel.swift in Sources */,
+				44CD3D3B2A39A668008EC28F /* ConfirmOrderVC.swift in Sources */,
 				449E995F2A2F655700762D98 /* TabBarViewController.swift in Sources */,
 				5BDEF1FB2A30EF5E007F8F4B /* DataManager.swift in Sources */,
+				44CD3D3D2A39E8EF008EC28F /* PaymentMethodsView.swift in Sources */,
 				5BDEF87A2A34AE4F00E63AF0 /* PlaceCell.swift in Sources */,
 				5BFB728F2A38934F00CA28AC /* HistoryItemCell.swift in Sources */,
 				449E99612A2F656E00762D98 /* HomeVC.swift in Sources */,

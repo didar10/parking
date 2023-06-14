@@ -39,6 +39,26 @@ extension ViewControllerAppearanceProtocol {
     func configureNavigationController() {}
 }
 
+protocol ConfigureCellUI {
+    func configureViews()
+    func setupConstraints()
+    func setupTableView()
+    func registerTableViewCells()
+    func registerCollectionViewCells()
+    func setupCollectionView()
+    func addActionsForUIElements()
+}
+
+extension ConfigureCellUI {
+    func configureViews() {}
+    func setupConstraints() {}
+    func setupTableView() {}
+    func registerTableViewCells() {}
+    func registerCollectionViewCells() {}
+    func setupCollectionView() {}
+    func addActionsForUIElements() {}
+}
+
 let PLACEMARKS_NUMBER = 3
 let FONT_SIZE: CGFloat = 15
 let MARGIN_SIZE: CGFloat = 3
@@ -109,21 +129,6 @@ class Observer<T> {
     }
 }
 
-struct ParkingSpace {
-    let fromDate: String?
-    let isAvailable: Bool?
-    let number: String?
-    let toDate: String?
-}
-
-struct ParkingModel: Codable, Equatable {
-//    let name: String?
-    let address: String?
-//    let capacity: Int?
-//    let price: Int?
-    let lat: String?
-    let lon: String?
-}
 extension UIViewController {
     func setAlertView(text: String, time: Double) {
         let alert = UIAlertController(title: "", message: text, preferredStyle: .alert)
@@ -189,5 +194,125 @@ fileprivate extension UIView {
 
     @objc func handleTap(sender: UITapGestureRecognizer) {
         tapAction?()
+    }
+}
+struct OrderItems {
+    static var space = String()
+    static var name = String()
+    static var time = String()
+}
+
+class BaseUICollectionViewCell: UICollectionViewCell {
+    
+    lazy var sizeScreen: CGFloat = UIScreen.main.bounds.height
+    lazy var height: CGFloat = UIScreen.main.bounds.height
+    lazy var width: CGFloat = UIScreen.main.bounds.width
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupViews()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setupViews()
+    }
+    
+    func setupViews() {
+        backgroundColor = .clear
+    }
+    
+    func boxCell() -> CGFloat {
+        
+        if (height > 740 && width < 400) {
+            return 54
+        }
+        
+        if (height > 790 && width > 400) {
+            return 60
+        }
+        
+        else {
+            return 56
+        }
+    }
+    
+    func fontMedium() -> Float {
+        
+        if (height > 740 && width < 400) {
+            return 14
+        }
+        
+        if (height > 790 && width > 400) {
+            return 16
+        }
+        
+        else {
+            return 16
+        }
+    }
+    
+    func fontBig() -> CGFloat {
+        
+        if (height > 740 && width < 400) {
+            return 20
+        }
+        
+        if (height > 790 && width > 400) {
+            return 24
+        }
+        
+        else {
+            return 20
+        }
+    }
+    
+    func medium() -> CGFloat {
+        
+        if (height > 740 && width < 400) {
+            return 44
+        }
+        
+        if (height > 790 && width > 400) {
+            return 52
+        }
+        
+        else {
+            return 48
+        }
+    }
+    
+    func big() -> CGFloat {
+        
+        if (height > 740 && width < 400) {
+            return 48
+        }
+        
+        if (height > 790 && width > 400) {
+            return 60
+        }
+        
+        else {
+            return 52
+        }
+    }
+    
+    func box() -> CGFloat {
+        
+        if (height > 740 && width < 400) {
+            return 48
+        }
+        
+        if (height > 790 && width > 400) {
+            return 60
+        }
+        
+        else {
+            return 52
+        }
     }
 }
