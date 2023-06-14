@@ -89,10 +89,6 @@ struct ParkingModel: Codable, Equatable {
     let lon: String?
 }
 
-
-
-import UIKit
-
 enum PaymentSystem {
     case paybox
     case cloudPayment
