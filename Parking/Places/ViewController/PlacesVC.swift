@@ -30,6 +30,7 @@ final class PlacesVC: UIViewController {
     
     
     func callToViewModel() {
+        viewModel.getCarInfo()
         viewModel.setUpPlaces()
         viewModel.placesArray.bind { [weak self] value in
             guard let self else { return }
@@ -38,6 +39,10 @@ final class PlacesVC: UIViewController {
                 self.collectionView.reloadData()
             }
         }
+//        viewModel.car.bind { [weak self] car in
+//            guard let self else { return }
+//            guard let value else { return }
+//        }
     }
 }
 
@@ -110,17 +115,14 @@ extension PlacesVC: UICollectionViewDelegateFlowLayout {
                     OrderItems.space = arr[indexPath.item].number ?? ""
                     OrderItems.name = self.titleLabel.text ?? ""
                     if !self.viewModel.fromTime.isEmpty && !self.viewModel.fromTime.isEmpty {
-                        if let check = self.viewModel.checkDetails() {
-                            if check {
-                                let vc = ConfirmOrderVC()
-                                vc.modalPresentationStyle = .overFullScreen
-                                self.navigationController?.pushViewController(vc, animated: true)
-                            } else {
-                                let vc = CarDetailVC()
-                                vc.modalPresentationStyle = .overFullScreen
-//                                self.present(vc, animated: true)
-                                self.navigationController?.pushViewController(vc, animated: true)
-                            }
+                        if let car = self.viewModel.car.value {
+                            let vc = ConfirmOrderVC()
+                            vc.modalPresentationStyle = .overFullScreen
+                            self.navigationController?.pushViewController(vc, animated: true)
+                        } else {
+                            let vc = CarDetailVC()
+                            vc.modalPresentationStyle = .overFullScreen
+                            self.navigationController?.pushViewController(vc, animated: true)
                         }
                     }
                 }

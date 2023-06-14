@@ -13,8 +13,9 @@ final class PlacesViewModel: NSObject {
     
     var placesArray: Observer<[ParkingSpace]?> = Observer(value: [])
     
-//    var carDetail: Observer<CarDetail?> = Observer(value: nil)
-    var car: CarDetail?
+    var car: Observer<CarDetail?> = Observer(value: nil)
+    
+//    var car: CarDetail?
     
     var fromTime = ""
     var toTime = ""
@@ -34,7 +35,7 @@ final class PlacesViewModel: NSObject {
         dataManager.getCarDetail { [weak self] detail in
             guard let self else { return }
             print("detail \(detail)")
-            self.car = detail
+            self.car.value = detail
         }
     }
     
@@ -45,11 +46,11 @@ final class PlacesViewModel: NSObject {
     func passToTime(time: String) {
         toTime = time
     }
-    
-    func checkDetails() -> Bool? {
-        if let _ = car?.number {
-            return true
-        }
-        return true
-    }
+
+//    func checkDetails() -> Bool? {
+//        if let _ = car?.value.number {
+//            return true
+//        }
+//        return true
+//    }
 }

@@ -244,7 +244,6 @@
 		44CD3D362A39A5E1008EC28F /* ConfirmOrder */ = {
 			isa = PBXGroup;
 			children = (
-				44CD3D392A39A5F3008EC28F /* ViewModel */,
 				44CD3D382A39A5EE008EC28F /* Views */,
 				44CD3D372A39A5E7008EC28F /* ViewContoller */,
 			);
@@ -266,13 +265,6 @@
 				44CD3D3E2A39EAD8008EC28F /* PaymentMethodCVCell.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		44CD3D392A39A5F3008EC28F /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		44CD3D412A39F03A008EC28F /* Loader */ = {

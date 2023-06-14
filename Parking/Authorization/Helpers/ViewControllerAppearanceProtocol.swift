@@ -200,6 +200,14 @@ struct OrderItems {
     static var space = String()
     static var name = String()
     static var time = String()
+    
+    static var cardNumber = String()
+//    
+//    static var number = String()
+//    static var color = String()
+//    static var brand = String()
+//    static var model = String()
+//    static var year = String()
 }
 
 class BaseUICollectionViewCell: UICollectionViewCell {
