@@ -114,12 +114,14 @@ extension RegistrationVC: ViewControllerAppearanceProtocol {
         fioInputView.titleLabel.text = "ФИО"
         fioInputView.textField.newPlaceholder = "ФИО"
         phoneInputView.titleLabel.text = "Телефон"
+        phoneInputView.textField.keyboardType = .phonePad
         phoneInputView.textField.newPlaceholder = "Телефон"
         emailInputView.titleLabel.text = "Email"
         emailInputView.textField.newPlaceholder = "Email"
         emailInputView.textField.keyboardType = .emailAddress
         passwordInputView.titleLabel.text = "Пароль"
         passwordInputView.textField.newPlaceholder = "Пароль"
+        passwordInputView.textField.isSecureTextEntry = true
     }
     
     func setupConstraints() {

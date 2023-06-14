@@ -41,7 +41,7 @@ final class ProfileVC: UIViewController {
     }
     
     @objc private func handleOpenCarDetail() {
-        let vc = CarDetailVC()
+        let vc = CarDetailVC(pageType: .fromProfile)
         vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }
