@@ -40,7 +40,9 @@ final class DataManager {
         }
     }
     
-    func createUser(email: String, password: String, completion: @escaping(_ isSuccess: Bool, _ error: String?) -> ()) {
+    func createUser(
+        email: String, password: String,
+        completion: @escaping(_ isSuccess: Bool, _ error: String?) -> ()) {
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if let error = error as? NSError {
                 switch error.code {
@@ -62,7 +64,9 @@ final class DataManager {
         }
     }
     
-    func saveUserData(fio: String, phone: String, email: String, completion: @escaping(_ isSuccess: Bool, _ error: String?) -> ()) {
+    func saveUserData(
+        fio: String, phone: String,
+        email: String, completion: @escaping(_ isSuccess: Bool, _ error: String?) -> ()) {
         let data = ["name": fio, "phone": phone, "email": email]
         let userId = Auth.auth().currentUser?.uid
         usersReference.document(userId!).setData(data) { error in
@@ -75,7 +79,9 @@ final class DataManager {
         }
     }
     
-    func saveCarDetail(data: CarDetail, completion: @escaping(_ isSuccess: Bool, _ error: String?) -> ()) {
+    func saveCarDetail(
+        data: CarDetail,
+        completion: @escaping(_ isSuccess: Bool, _ error: String?) -> ()) {
         let data = ["number": data.number, "color": data.color, "brand": data.brand, "model": data.model, "year": data.year]
         let userId = Auth.auth().currentUser?.uid
         carsReference.document(userId!).setData(data) { error in
@@ -111,8 +117,6 @@ final class DataManager {
         }
     }
     
-   
-    
     func getParkingSpaces(completion: @escaping([ParkingSpace]?) -> ()) {
         parkingSpacesReference.getDocuments { snapshot, error in
             if let snapshot {
@@ -131,13 +135,45 @@ final class DataManager {
         }
     }
     
-    func saveParkingHistory(data: ParkingHistory, completion: @escaping(_ isSuccess: Bool, _ error: String?) -> ()) {
+    func changeParkingSpace(number: String, completion: @escaping(Bool) -> ()) {
+        let group = DispatchGroup()
+        parkingSpacesReference.whereField(
+            "number", isEqualTo: number).getDocuments { [weak self] snapshot, error in
+            guard let self else { return }
+            if let snapshot {
+                for doc in snapshot.documents {
+                    group.enter()
+                    self.parkingSpacesReference.document(
+                        doc.documentID).setData(
+                            ["isAvailable": false],
+                            merge: true)
+                    group.leave()
+                }
+                
+                group.notify(queue: .main) {
+                    completion(true)
+                }
+            }
+            
+            if let error {
+                print(error)
+                completion(false)
+            }
+        }
+    }
+    
+    func saveParkingHistory(
+        data: ParkingHistory,
+        completion: @escaping(_ isSuccess: Bool, _ error: String?) -> ()) {
         if let userId = Auth.auth().currentUser?.uid {
-            let data = ["parkingTime": "Время: \(data.parkingTime)", "parkingName": data.parkingName, "parkingSpaceNumber": "Место: \(data.parkingSpaceNumber)", "userId": userId]
+            let data = ["parkingTime": "Время: \(data.parkingTime)",
+                        "parkingName": data.parkingName,
+                        "parkingSpaceNumber": "Место: \(data.parkingSpaceNumber)",
+                        "userId": userId]
             parkingHistoryReference.addDocument(data: data) { error in
                 if let error {
                     completion(false, "Не получилось!")
-                    print("Error saving channel: \(error.localizedDescription)")
+                    print("Error saving: \(error.localizedDescription)")
                 } else {
                     completion(true, nil)
                 }

@@ -24,6 +24,7 @@ final class ParkingHistoryViewModel {
                 self.history = data
                 self.bindHistory()
             } else {
+                self.history = []
                 self.bindHistory()
             }
         }

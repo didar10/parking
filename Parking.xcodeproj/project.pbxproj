@@ -20,6 +20,7 @@
 		44CD3D3F2A39EAD8008EC28F /* PaymentMethodCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CD3D3E2A39EAD8008EC28F /* PaymentMethodCVCell.swift */; };
 		44CD3D452A39F052008EC28F /* PaymentLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CD3D442A39F052008EC28F /* PaymentLoadingView.swift */; };
 		44CD3D472A39F15B008EC28F /* PaymentPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CD3D462A39F15B008EC28F /* PaymentPageVC.swift */; };
+		5B8DF4572A39F60600D022D0 /* PaymentPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8DF4562A39F60600D022D0 /* PaymentPageViewModel.swift */; };
 		5BDEF1F52A30E495007F8F4B /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDEF1F42A30E495007F8F4B /* RegistrationVC.swift */; };
 		5BDEF1F92A30EB62007F8F4B /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDEF1F82A30EB62007F8F4B /* RegistrationViewModel.swift */; };
 		5BDEF1FB2A30EF5E007F8F4B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDEF1FA2A30EF5E007F8F4B /* DataManager.swift */; };
@@ -65,6 +66,7 @@
 		44CD3D3E2A39EAD8008EC28F /* PaymentMethodCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodCVCell.swift; sourceTree = "<group>"; };
 		44CD3D442A39F052008EC28F /* PaymentLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentLoadingView.swift; sourceTree = "<group>"; };
 		44CD3D462A39F15B008EC28F /* PaymentPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPageVC.swift; sourceTree = "<group>"; };
+		5B8DF4562A39F60600D022D0 /* PaymentPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPageViewModel.swift; sourceTree = "<group>"; };
 		5BDEF1F42A30E495007F8F4B /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
 		5BDEF1F82A30EB62007F8F4B /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		5BDEF1FA2A30EF5E007F8F4B /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 		44CD3D412A39F03A008EC28F /* Loader */ = {
 			isa = PBXGroup;
 			children = (
+				5B8DF4552A39F5F700D022D0 /* ViewModel */,
 				44CD3D432A39F047008EC28F /* View */,
 				44CD3D422A39F03E008EC28F /* ViewController */,
 			);
@@ -296,6 +299,14 @@
 				44CD3D442A39F052008EC28F /* PaymentLoadingView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5B8DF4552A39F5F700D022D0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5B8DF4562A39F60600D022D0 /* PaymentPageViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		5BDEF1F62A30E49C007F8F4B /* CustomViews */ = {
@@ -552,6 +563,7 @@
 				44C2DD2B2A345C8F007E5C7B /* HomeViewModel.swift in Sources */,
 				44CD3D2C2A38995C008EC28F /* TimeAlertVC.swift in Sources */,
 				449E99652A2F658C00762D98 /* ProfileVC.swift in Sources */,
+				5B8DF4572A39F60600D022D0 /* PaymentPageViewModel.swift in Sources */,
 				5BDEF8642A3452D400E63AF0 /* LoginVC.swift in Sources */,
 				449E99632A2F657B00762D98 /* ParkingHistoryVC.swift in Sources */,
 				5BDEF1F52A30E495007F8F4B /* RegistrationVC.swift in Sources */,
