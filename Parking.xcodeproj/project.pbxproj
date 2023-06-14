@@ -20,6 +20,9 @@
 		44CD3D3F2A39EAD8008EC28F /* PaymentMethodCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CD3D3E2A39EAD8008EC28F /* PaymentMethodCVCell.swift */; };
 		44CD3D452A39F052008EC28F /* PaymentLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CD3D442A39F052008EC28F /* PaymentLoadingView.swift */; };
 		44CD3D472A39F15B008EC28F /* PaymentPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CD3D462A39F15B008EC28F /* PaymentPageVC.swift */; };
+		44CD3D4B2A39F77C008EC28F /* CardInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CD3D4A2A39F77C008EC28F /* CardInputView.swift */; };
+		44CD3D4D2A39F8DF008EC28F /* AddCardAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CD3D4C2A39F8DF008EC28F /* AddCardAlertVC.swift */; };
+		44CD3D4F2A39FBCE008EC28F /* ConfirmOrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CD3D4E2A39FBCE008EC28F /* ConfirmOrderViewModel.swift */; };
 		5BDEF1F52A30E495007F8F4B /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDEF1F42A30E495007F8F4B /* RegistrationVC.swift */; };
 		5BDEF1F92A30EB62007F8F4B /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDEF1F82A30EB62007F8F4B /* RegistrationViewModel.swift */; };
 		5BDEF1FB2A30EF5E007F8F4B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDEF1FA2A30EF5E007F8F4B /* DataManager.swift */; };
@@ -65,6 +68,9 @@
 		44CD3D3E2A39EAD8008EC28F /* PaymentMethodCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodCVCell.swift; sourceTree = "<group>"; };
 		44CD3D442A39F052008EC28F /* PaymentLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentLoadingView.swift; sourceTree = "<group>"; };
 		44CD3D462A39F15B008EC28F /* PaymentPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPageVC.swift; sourceTree = "<group>"; };
+		44CD3D4A2A39F77C008EC28F /* CardInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInputView.swift; sourceTree = "<group>"; };
+		44CD3D4C2A39F8DF008EC28F /* AddCardAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardAlertVC.swift; sourceTree = "<group>"; };
+		44CD3D4E2A39FBCE008EC28F /* ConfirmOrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmOrderViewModel.swift; sourceTree = "<group>"; };
 		5BDEF1F42A30E495007F8F4B /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
 		5BDEF1F82A30EB62007F8F4B /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		5BDEF1FA2A30EF5E007F8F4B /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -269,6 +275,7 @@
 		44CD3D392A39A5F3008EC28F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				44CD3D4E2A39FBCE008EC28F /* ConfirmOrderViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -296,6 +303,23 @@
 				44CD3D442A39F052008EC28F /* PaymentLoadingView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		44CD3D482A39F76B008EC28F /* AddCard */ = {
+			isa = PBXGroup;
+			children = (
+				44CD3D492A39F76F008EC28F /* ViewController */,
+			);
+			path = AddCard;
+			sourceTree = "<group>";
+		};
+		44CD3D492A39F76F008EC28F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				44CD3D4A2A39F77C008EC28F /* CardInputView.swift */,
+				44CD3D4C2A39F8DF008EC28F /* AddCardAlertVC.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		5BDEF1F62A30E49C007F8F4B /* CustomViews */ = {
@@ -390,6 +414,7 @@
 		DDE3E6882A2DFD6B008F4FF8 /* Parking */ = {
 			isa = PBXGroup;
 			children = (
+				44CD3D482A39F76B008EC28F /* AddCard */,
 				44CD3D412A39F03A008EC28F /* Loader */,
 				44CD3D362A39A5E1008EC28F /* ConfirmOrder */,
 				44CD3D262A388EEC008EC28F /* CarDetails */,
@@ -546,9 +571,11 @@
 				449E995F2A2F655700762D98 /* TabBarViewController.swift in Sources */,
 				5BDEF1FB2A30EF5E007F8F4B /* DataManager.swift in Sources */,
 				44CD3D3D2A39E8EF008EC28F /* PaymentMethodsView.swift in Sources */,
+				44CD3D4B2A39F77C008EC28F /* CardInputView.swift in Sources */,
 				5BDEF87A2A34AE4F00E63AF0 /* PlaceCell.swift in Sources */,
 				5BFB728F2A38934F00CA28AC /* HistoryItemCell.swift in Sources */,
 				449E99612A2F656E00762D98 /* HomeVC.swift in Sources */,
+				44CD3D4F2A39FBCE008EC28F /* ConfirmOrderViewModel.swift in Sources */,
 				44C2DD2B2A345C8F007E5C7B /* HomeViewModel.swift in Sources */,
 				44CD3D2C2A38995C008EC28F /* TimeAlertVC.swift in Sources */,
 				449E99652A2F658C00762D98 /* ProfileVC.swift in Sources */,
@@ -567,6 +594,7 @@
 				44CD3D472A39F15B008EC28F /* PaymentPageVC.swift in Sources */,
 				DDE3E68C2A2DFD6B008F4FF8 /* SceneDelegate.swift in Sources */,
 				5BDEF8662A34550E00E63AF0 /* ProfileViewModel.swift in Sources */,
+				44CD3D4D2A39F8DF008EC28F /* AddCardAlertVC.swift in Sources */,
 				5BDEF8782A34ADFC00E63AF0 /* PlacesVC.swift in Sources */,
 				5BFB72932A389C3A00CA28AC /* ParkingHistoryViewModel.swift in Sources */,
 				5BDEF1F92A30EB62007F8F4B /* RegistrationViewModel.swift in Sources */,

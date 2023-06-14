@@ -11,6 +11,29 @@ class ConfirmOrderVC: UIViewController {
 
     let titleLabel = UILabel()
     
+    
+    let carModelLabel = UILabel()
+    let carNumberLabel = UILabel()
+    let carColorLabel = UILabel()
+    let carBrandLabel = UILabel()
+    let carYearLabel = UILabel()
+    
+    let carModelTitleLabel = UILabel()
+    let carNumberTitleLabel = UILabel()
+    let carColorTitleLabel = UILabel()
+    let carBrandTitleLabel = UILabel()
+    let carYearTitleLabel = UILabel()
+    
+    lazy var modelStackView = UIStackView(arrangedSubviews: [carModelTitleLabel, carModelLabel])
+    lazy var numberStackView = UIStackView(arrangedSubviews: [carNumberTitleLabel, carNumberLabel])
+    lazy var colorStackView = UIStackView(arrangedSubviews: [carColorTitleLabel, carColorLabel])
+    lazy var brandStackView = UIStackView(arrangedSubviews: [carBrandTitleLabel, carBrandLabel])
+    lazy var yearStackView = UIStackView(arrangedSubviews: [carYearTitleLabel, carYearLabel])
+    
+    let carView = UIView()
+    
+    lazy var carMainStackView = UIStackView(arrangedSubviews: [modelStackView, numberStackView, colorStackView, brandStackView, yearStackView])
+    
     let nameLabel = UILabel()
     let nameTitleLabel = UILabel()
     let nameView = UIView()
@@ -26,11 +49,26 @@ class ConfirmOrderVC: UIViewController {
     let continueButton = CustomButton(title: "Продолжить")
     
     let paymentLabel = UILabel()
+    let viewModel = ConfirmOrderViewModel()
     let paymentMethodView = PaymentMethodsView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        callToViewModel()
         setupUI()
+    }
+    
+    func callToViewModel() {
+        viewModel.getCarInfo()
+        viewModel.car.bind { [weak self] car in
+            guard let self else { return }
+            guard let car else { return }
+            self.carYearLabel.text = car.year
+            self.carBrandLabel.text = car.brand
+            self.carColorLabel.text = car.color
+            self.carNumberLabel.text = car.number
+            self.carModelLabel.text = car.model
+        }
     }
     
     @objc func didTapContinue(_ sender: UIButton) {
@@ -42,9 +80,10 @@ class ConfirmOrderVC: UIViewController {
 extension ConfirmOrderVC: ViewControllerAppearanceProtocol {
     func setupUI() {
         nameView.addSubview(nameLabel)
-        [titleLabel, mainView, paymentLabel, paymentMethodView, continueButton].forEach { v in
+        [titleLabel, carView, mainView, paymentLabel, paymentMethodView, continueButton].forEach { v in
             view.addSubview(v)
         }
+        carView.addSubview(carMainStackView)
         [mainStackView].forEach { l in
             mainView.addSubview(l)
         }
@@ -75,16 +114,26 @@ extension ConfirmOrderVC: ViewControllerAppearanceProtocol {
         timeLabel.text = OrderItems.time
         parkingLabel.text = OrderItems.space
         
-        mainView.layer.cornerRadius = 14
-        mainView.layer.borderColor = UIColor.systemBlue.cgColor
-        mainView.layer.borderWidth = 1
+        carYearTitleLabel.text = "Год"
+        carBrandTitleLabel.text = "Марка машины"
+        carModelTitleLabel.text = "Модель машины"
+        carColorTitleLabel.text = "Цвет машины"
+        carNumberTitleLabel.text = "Номер машины"
         
-        [nameTitleLabel, timeTitleLabel, parkingTitleLabel].forEach { l in
+        
+        
+        [carView, mainView].forEach { v in
+            v.layer.cornerRadius = 14
+            v.layer.borderColor = UIColor.systemBlue.cgColor
+            v.layer.borderWidth = 1
+        }
+        
+        [nameTitleLabel, timeTitleLabel, parkingTitleLabel, carModelTitleLabel, carNumberTitleLabel, carColorTitleLabel, carBrandTitleLabel, carYearTitleLabel].forEach { l in
             l.textColor = .black
             l.textAlignment = .left
         }
         
-        [nameLabel, timeLabel, parkingLabel].forEach { l in
+        [nameLabel, timeLabel, parkingLabel, carModelLabel, carNumberLabel, carColorLabel, carBrandLabel, carYearLabel].forEach { l in
             l.textColor = .systemBlue
             l.textAlignment = .right
         }
@@ -104,6 +153,9 @@ extension ConfirmOrderVC: ViewControllerAppearanceProtocol {
         
         mainStackView.axis = .vertical
         mainStackView.spacing = 12
+        
+        carMainStackView.axis = .vertical
+        carMainStackView.spacing = 12
     }
     
     func setupConstraints() {
@@ -117,12 +169,21 @@ extension ConfirmOrderVC: ViewControllerAppearanceProtocol {
             make.leading.trailing.equalToSuperview().inset(16)
         }
         
-        mainView.snp.makeConstraints { make in
+        carView.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(12)
             make.leading.trailing.equalToSuperview().inset(16)
         }
         
+        mainView.snp.makeConstraints { make in
+            make.top.equalTo(carView.snp.bottom).offset(12)
+            make.leading.trailing.equalToSuperview().inset(16)
+        }
+        
         mainStackView.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(12)
+        }
+        
+        carMainStackView.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(12)
         }
         
@@ -147,6 +208,12 @@ extension ConfirmOrderVC: ViewControllerAppearanceProtocol {
 }
 extension ConfirmOrderVC: PaymentMethodsViewDelegate {
     func didSelect(at indexPath: IndexPath) {
-        
+        switch indexPath.section {
+        case 0:
+            let vc = AddCardAlertVC(height: 450)
+            present(vc, animated: true)
+        default:
+            print("")
+        }
     }
 }
