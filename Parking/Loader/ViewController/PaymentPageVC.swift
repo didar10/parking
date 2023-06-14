@@ -8,6 +8,18 @@
 import UIKit
 
 final class PaymentPageVC: UIViewController {
+    private let viewModel: PaymentPageViewModel
+    
+    init(viewModel: PaymentPageViewModel = PaymentPageViewModel()) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+        self.viewModel.viewModelOutput = self
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     //MARK: - Properties
     let loadingView = PaymentLoadingView()
     
@@ -15,6 +27,7 @@ final class PaymentPageVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        callToViewModel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -25,7 +38,23 @@ final class PaymentPageVC: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        navigationBar(isHidden: false)
         navigationBarSwipeGesture(isEnabled: true)
+    }
+    
+    private func callToViewModel() {
+        viewModel.saveParking()
+    }
+}
+
+extension PaymentPageVC: PaymentPageViewModelOutput {
+    func saveParkingHistorySuccess() {
+        StaticItems.saveDataSuccessCallBack()
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
+    func saveParkingHistoryFailure() {
+        navigationController?.popToRootViewController(animated: true)
     }
 }
 

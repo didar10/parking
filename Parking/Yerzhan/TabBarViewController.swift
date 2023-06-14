@@ -23,6 +23,12 @@ class TabBarViewController: UITabBarController {
         let profileNav = UINavigationController(rootViewController: profileVC)
         
         viewControllers = [homeNav, historyNav, profileNav]
+        
+        StaticItems.saveDataSuccessCallBack = { [weak self] in
+            guard let self else { return }
+            self.selectedIndex = 1
+            StaticItems.changeTabbarItemCallBack()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

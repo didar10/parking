@@ -21,6 +21,7 @@ class ParkingHistoryVC: UIViewController {
     
     let titleLabel = UILabel()
     let tableView = UITableView()
+    let refreshControl = UIRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,9 +34,19 @@ class ParkingHistoryVC: UIViewController {
         viewModel.bindHistory = { [weak self] in
             guard let self else { return }
             DispatchQueue.main.async {
+                self.refreshControl.endRefreshing()
                 self.tableView.reloadData()
             }
         }
+        StaticItems.changeTabbarItemCallBack = { [weak self] in
+            guard let self else { return }
+            print("changeTabbarItemCallBack")
+            self.viewModel.getHistory()
+        }
+    }
+    
+    @objc private func handleRefresh() {
+        viewModel.getHistory()
     }
 }
 
@@ -48,6 +59,7 @@ extension ParkingHistoryVC: ViewControllerAppearanceProtocol {
         setupConstraints()
         registerTableViewCells()
         setupTableView()
+        addActionsForUIElements()
     }
     
     func configureViews() {
@@ -58,6 +70,7 @@ extension ParkingHistoryVC: ViewControllerAppearanceProtocol {
         titleLabel.font = UIFont.boldSystemFont(ofSize: 28)
         tableView.separatorStyle = .none
         tableView.backgroundColor = .white
+        tableView.refreshControl = refreshControl
     }
     
     func setupConstraints() {
@@ -70,6 +83,10 @@ extension ParkingHistoryVC: ViewControllerAppearanceProtocol {
             make.top.equalTo(titleLabel.snp.bottom).inset(-12)
             make.leading.trailing.bottom.equalToSuperview()
         }
+    }
+    
+    func addActionsForUIElements() {
+        refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
     }
     
     func registerTableViewCells() {
