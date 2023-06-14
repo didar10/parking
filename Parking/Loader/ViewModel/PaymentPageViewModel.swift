@@ -34,7 +34,7 @@ final class PaymentPageViewModel {
         DispatchQueue.global().asyncAfter(deadline: .now() + 1.2) { [weak self] in
             guard let self else { return }
             
-            self.dataManager.changeParkingSpace(number: OrderItems.space) { isSuccess in
+            self.dataManager.changeParkingSpace(number: OrderItems.space, fromTime: OrderItems.fromTime, toTime: OrderItems.toTime) { isSuccess in
                 if isSuccess {
                     self.dataManager.saveParkingHistory(data: model) { isSuccess, error in
                         if isSuccess {

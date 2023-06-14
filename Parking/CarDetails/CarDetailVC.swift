@@ -7,11 +7,19 @@
 
 import UIKit
 
+enum CarDetailPageType {
+    case fromProfile
+    case fromOrder
+}
+
 final class CarDetailVC: BaseVC {
     private let viewModel: CarDetailViewModel
+    var pageType: CarDetailPageType
     
-    init(viewModel: CarDetailViewModel = CarDetailViewModel()) {
+    init(viewModel: CarDetailViewModel = CarDetailViewModel(),
+         pageType: CarDetailPageType) {
         self.viewModel = viewModel
+        self.pageType = pageType
         super.init(nibName: nil, bundle: nil)
         self.viewModel.viewModelOutput = self
     }
@@ -64,7 +72,14 @@ final class CarDetailVC: BaseVC {
 extension CarDetailVC: CarDetailViewModelOutput {
     func saveCarDetailSuccess() {
         hideLoadingIndicator()
-        navigationController?.popViewController(animated: true)
+        switch pageType {
+        case .fromOrder:
+            let vc = ConfirmOrderVC()
+            vc.modalPresentationStyle = .overFullScreen
+            navigationController?.pushViewController(vc, animated: true)
+        case .fromProfile:
+            navigationController?.popViewController(animated: true)
+        }
     }
     
     func saveCarDetailFailure(error: String) {

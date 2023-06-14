@@ -50,7 +50,6 @@ extension CarDetailCell: ViewControllerAppearanceProtocol {
         titleLabel.font = UIFont.boldSystemFont(ofSize: 28)
         numberInputView.titleLabel.text = "Номер машины"
         numberInputView.textField.newPlaceholder = "Номер машины"
-        numberInputView.textField.keyboardType = .numberPad
         colorInputView.titleLabel.text = "Цвет"
         colorInputView.textField.newPlaceholder = "Цвет"
         yearInputView.titleLabel.text = "Год"

@@ -135,7 +135,7 @@ final class DataManager {
         }
     }
     
-    func changeParkingSpace(number: String, completion: @escaping(Bool) -> ()) {
+    func changeParkingSpace(number: String, fromTime: String, toTime: String, completion: @escaping(Bool) -> ()) {
         let group = DispatchGroup()
         parkingSpacesReference.whereField(
             "number", isEqualTo: number).getDocuments { [weak self] snapshot, error in
@@ -145,7 +145,9 @@ final class DataManager {
                     group.enter()
                     self.parkingSpacesReference.document(
                         doc.documentID).setData(
-                            ["isAvailable": false],
+                            ["isAvailable": false,
+                             "fromDate": fromTime,
+                             "toDate": toTime],
                             merge: true)
                     group.leave()
                 }

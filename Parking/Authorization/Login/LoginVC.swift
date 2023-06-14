@@ -108,6 +108,7 @@ extension LoginVC: ViewControllerAppearanceProtocol {
         emailInputView.textField.keyboardType = .emailAddress
         passwordInputView.titleLabel.text = "Пароль"
         passwordInputView.textField.newPlaceholder = "Пароль"
+        passwordInputView.textField.isSecureTextEntry = true
     }
     
     func setupConstraints() {

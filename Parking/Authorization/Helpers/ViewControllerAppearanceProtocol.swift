@@ -199,9 +199,10 @@ fileprivate extension UIView {
 struct OrderItems {
     static var space = String()
     static var name = String()
-    static var time = String()
-    
+    static var fromTime = String()
+    static var toTime = String()
     static var cardNumber = String()
+    static var time = String()
 //    
 //    static var number = String()
 //    static var color = String()
