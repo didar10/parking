@@ -316,3 +316,12 @@ class BaseUICollectionViewCell: UICollectionViewCell {
         }
     }
 }
+extension UIViewController {
+    func navigationBar(isHidden: Bool){
+        navigationController?.navigationBar.isHidden = isHidden
+    }
+    
+    func navigationBarSwipeGesture(isEnabled: Bool) {
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = isEnabled
+    }
+}

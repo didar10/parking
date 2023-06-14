@@ -231,7 +231,7 @@ extension HomeVC: YMKClusterListener, YMKClusterTapListener, YMKMapObjectTapList
                 if let p = array.firstIndex(where: { $0 == userData }) {
                     let vc = PlacesVC()
                     vc.titleLabel.text = array.first?.address
-                    vc.navigationController?.hidesBottomBarWhenPushed = true
+                    vc.hidesBottomBarWhenPushed = true
                     navigationController?.pushViewController(vc, animated: true)
                 }
             }

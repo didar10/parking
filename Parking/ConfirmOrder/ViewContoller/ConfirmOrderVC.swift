@@ -23,6 +23,7 @@ class ConfirmOrderVC: UIViewController {
     lazy var parkingStackView = UIStackView(arrangedSubviews: [parkingTitleLabel, parkingLabel])
     lazy var mainStackView = UIStackView(arrangedSubviews: [nameStackView, parkingStackView, timeStackView])
     let mainView = UIView()
+    let continueButton = CustomButton(title: "Продолжить")
     
     let paymentLabel = UILabel()
     let paymentMethodView = PaymentMethodsView()
@@ -31,12 +32,17 @@ class ConfirmOrderVC: UIViewController {
         super.viewDidLoad()
         setupUI()
     }
+    
+    @objc func didTapContinue(_ sender: UIButton) {
+        let vc = PaymentPageVC()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension ConfirmOrderVC: ViewControllerAppearanceProtocol {
     func setupUI() {
         nameView.addSubview(nameLabel)
-        [titleLabel, mainView, paymentLabel, paymentMethodView].forEach { v in
+        [titleLabel, mainView, paymentLabel, paymentMethodView, continueButton].forEach { v in
             view.addSubview(v)
         }
         [mainStackView].forEach { l in
@@ -49,6 +55,7 @@ extension ConfirmOrderVC: ViewControllerAppearanceProtocol {
     
     func addActionsForUIElements() {
         paymentMethodView.delegate = self
+        continueButton.addTarget(self, action: #selector(didTapContinue(_:)), for: .touchUpInside)
     }
     
     func configureViews() {
@@ -129,6 +136,12 @@ extension ConfirmOrderVC: ViewControllerAppearanceProtocol {
             make.leading.trailing.equalToSuperview()
             make.top.equalTo(paymentLabel.snp.bottom).offset(12)
 //            make.bottom.equalToSuperview().inset(12)
+        }
+        
+        continueButton.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(16)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(20)
+            make.height.equalTo(48)
         }
     }
 }
