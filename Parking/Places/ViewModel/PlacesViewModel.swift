@@ -34,7 +34,6 @@ final class PlacesViewModel: NSObject {
     func getCarInfo() {
         dataManager.getCarDetail { [weak self] detail in
             guard let self else { return }
-            print("detail \(detail)")
             self.car.value = detail
         }
     }
